@@ -1,7 +1,7 @@
 # Multi-Label Fine-Grained Hallucination Detection Across Medical, Legal, and Financial Question Answering
 
-**Authors**: Major Project Research Team  
-**Affiliation**: Department of Computer Science & Engineering  
+**Authors**: P Anil Kumar, Yavanika Nukala, Lukka Pujitha, Thulasi Sai Akshit Kota  
+**Affiliation**: Department of Computer Science & Engineering, Prasad V. Potluri Siddhartha Institute of Technology  
 **Repository**: `MultiLabel-Hallucination-Detection`  
 **Date**: November 2026  
 

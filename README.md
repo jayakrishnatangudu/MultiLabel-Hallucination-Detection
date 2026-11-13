@@ -112,8 +112,8 @@ To compile or edit the research paper in Overleaf:
 If you use this benchmark, code, or methodology in your research, please cite:
 
 ```bibtex
-@inproceedings{tangudu2026multilabel,
-  author    = {Uddagiri Sirisha and Jaya Krishna Tangudu and Siva Sai Swaroop Yanduri and Pavan Deep P and Chandra Shekhar},
+@inproceedings{anilkumar2026multilabel,
+  author    = {P. Anil Kumar and Yavanika Nukala and Lukka Pujitha and Thulasi Sai Akshit Kota},
   title     = {An Automated Multi-Label Fine-Grained Hallucination Detection and Calibration Framework Across Domain-Specific Question Answering},
   booktitle = {Proceedings of the IEEE Conference on Natural Language Processing and Knowledge Engineering},
   year      = {2026}
