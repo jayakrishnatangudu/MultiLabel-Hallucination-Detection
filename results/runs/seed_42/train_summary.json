@@ -1,0 +1,81 @@
+{
+  "completed_at_utc": "2026-11-13T09:28:42.734794+00:00",
+  "backbone_key": "distilbert",
+  "hf_model_id": "distilbert/distilbert-base-uncased",
+  "max_length": 512,
+  "pooling": "masked_mean",
+  "head_type": "independent_sigmoid",
+  "context_mode": "budgeted_truncation",
+  "loss_type": "bce",
+  "seed": 42,
+  "best_epoch": 2,
+  "best_val_macro_f1_050": 0.125,
+  "val_latency_ms_per_sample": 654.065,
+  "train_truncation_summary": {
+    "count": 241,
+    "question_truncated_rate": 0.0,
+    "response_truncated_rate": 0.012448,
+    "context_truncated_rate": 0.261411,
+    "mean_sequence_tokens": 314.57
+  },
+  "val_truncation_summary": {
+    "count": 25,
+    "question_truncated_rate": 0.0,
+    "response_truncated_rate": 0.04,
+    "context_truncated_rate": 0.24,
+    "mean_sequence_tokens": 298.4
+  },
+  "val_calibration_report": {
+    "fitted_at_utc": "2026-11-13T09:28:39.710452+00:00",
+    "per_label": true,
+    "n_val_samples": 25,
+    "temperatures": {
+      "factual_inconsistency": 0.991844,
+      "factual_fabrication": 0.513247,
+      "instruction_inconsistency": 0.582788,
+      "logical_inconsistency": 0.384544,
+      "context_inconsistency": 0.313327
+    },
+    "val_bce_before": 0.577426,
+    "val_bce_after": 0.53396,
+    "val_mean_ece_before": 0.112089,
+    "val_mean_ece_after": 0.083399,
+    "val_mean_brier_before": 0.194855,
+    "val_mean_brier_after": 0.181854
+  },
+  "val_threshold_tuning_summary": {
+    "per_label_thresholds": {
+      "factual_inconsistency": 0.3,
+      "factual_fabrication": 0.34,
+      "instruction_inconsistency": 0.21,
+      "logical_inconsistency": 0.2,
+      "context_inconsistency": 0.4
+    },
+    "val_macro_f1_fixed_050": 0.125,
+    "val_macro_f1_tuned": 0.592115
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.656985,
+      "val_loss": 0.580984,
+      "val_macro_f1": 0.0,
+      "val_latency_ms": 181.663
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.621493,
+      "val_loss": 0.577425,
+      "val_macro_f1": 0.125,
+      "val_latency_ms": 652.307
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.601443,
+      "val_loss": 0.579175,
+      "val_macro_f1": 0.125,
+      "val_latency_ms": 651.027
+    }
+  ],
+  "config_sha256": "5ffe15cc16fe511a7a4c0fc3215a76e2feea8d129d3802467341ad9e484aea57"
+}

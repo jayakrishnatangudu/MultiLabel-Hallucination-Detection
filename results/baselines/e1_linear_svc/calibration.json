@@ -1,0 +1,29 @@
+{
+  "per_label": true,
+  "fitted": true,
+  "temperatures_vector": [
+    0.6756096948577404,
+    0.7495904906699726,
+    0.9322318337723268,
+    1.2812855942048471,
+    1.2335195787107989
+  ],
+  "fit_report": {
+    "fitted_at_utc": "2026-11-13T08:21:54.481521+00:00",
+    "per_label": true,
+    "n_val_samples": 25,
+    "temperatures": {
+      "factual_inconsistency": 0.67561,
+      "factual_fabrication": 0.74959,
+      "instruction_inconsistency": 0.932232,
+      "logical_inconsistency": 1.281286,
+      "context_inconsistency": 1.23352
+    },
+    "val_bce_before": 0.508903,
+    "val_bce_after": 0.502678,
+    "val_mean_ece_before": 0.170311,
+    "val_mean_ece_after": 0.179324,
+    "val_mean_brier_before": 0.170938,
+    "val_mean_brier_after": 0.169021
+  }
+}

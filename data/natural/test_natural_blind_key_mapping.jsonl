@@ -1,0 +1,3 @@
+{"annotation_item_id": "ANN_00000", "sample_id": "NAT_0000_gpt-oss-120b", "source_group_id": "grp_medquad_012402", "source_dataset": "medquad", "data_origin": "natural", "generation_strategy": "natural_qa", "intended_labels": null}
+{"annotation_item_id": "ANN_00001", "sample_id": "NAT_0000_qwen3.8-27b", "source_group_id": "grp_medquad_012402", "source_dataset": "medquad", "data_origin": "natural", "generation_strategy": "natural_qa", "intended_labels": null}
+{"annotation_item_id": "ANN_00002", "sample_id": "NAT_0000_gemini-3.5-flash-lite", "source_group_id": "grp_medquad_012402", "source_dataset": "medquad", "data_origin": "natural", "generation_strategy": "natural_qa", "intended_labels": null}

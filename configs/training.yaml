@@ -1,0 +1,55 @@
+# Phase 4-5 Training, Calibration, Thresholding, and Locked Evaluation Configuration
+
+schema_version: "1.0"
+random_seeds: [42, 101, 202]
+
+optimizer:
+  name: "adamw"
+  backbone_learning_rate: 2.0e-5
+  head_learning_rate: 1.0e-4
+  weight_decay: 0.01
+  warmup_ratio: 0.10
+  max_grad_norm: 1.0
+
+schedule:
+  epochs: 6
+  train_batch_size: 16
+  eval_batch_size: 32
+  gradient_accumulation_steps: 2
+  early_stopping_patience: 2
+  selection_metric: "val_macro_f1"
+  fp16_if_cuda: true
+  bf16_if_ampere: true
+  gradient_checkpointing: false
+
+loss:
+  type: "bce"                     # Options: "bce", "weighted_bce", "asymmetric_focal"
+  pos_weight_cap: 5.0
+  asl_gamma_neg: 4.0
+  asl_gamma_pos: 1.0
+  asl_clip: 0.05
+
+calibration:
+  enabled: true
+  per_label: true                 # Fit vector T = [T_FI, T_FF, T_II, T_LI, T_CI] strictly on val
+
+thresholding:
+  baseline_tau: 0.50
+  min_tau: 0.05
+  max_tau: 0.95
+  step: 0.01
+
+evaluation:
+  n_bootstrap: 1000
+  confidence_level: 0.95
+  ece_bins: 10
+
+paths:
+  train_file: "data/generated/full/synthetic_train.jsonl"
+  val_file: "data/generated/full/synthetic_val.jsonl"
+  test_synthetic_file: "data/generated/full/synthetic_test_synthetic.jsonl"
+  test_synthetic_gold_file: "data/validated/test_synthetic_gold.jsonl"
+  test_natural_file: "data/validated/test_natural_gold.jsonl"
+  experiments_dir: "experiments"
+  results_dir: "results"
+

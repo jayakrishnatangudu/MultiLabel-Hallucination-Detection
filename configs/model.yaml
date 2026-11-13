@@ -1,0 +1,73 @@
+# Verified Phase 4 Multi-Label Transformer Architecture & Token Budget Configuration
+# Model IDs, parameter counts, and positional limits match docs/architecture.md (2026-11-12).
+
+schema_version: "1.0"
+
+labels:
+  - factual_inconsistency
+  - factual_fabrication
+  - instruction_inconsistency
+  - logical_inconsistency
+  - context_inconsistency
+
+backbones:
+  distilbert:
+    experiment_id: "E2.1"
+    role: "lightweight_baseline"
+    hf_model_id: "distilbert/distilbert-base-uncased"
+    hidden_size: 768
+    max_length: 512
+    max_position_embeddings: 512
+    params_approx: 66985530
+    license: "apache-2.0"
+    supports_token_type_ids: false
+
+  roberta:
+    experiment_id: "E2.2"
+    role: "comparison_encoder"
+    hf_model_id: "FacebookAI/roberta-base"
+    hidden_size: 768
+    max_length: 512
+    max_position_embeddings: 514
+    params_approx: 124697947
+    license: "mit"
+    supports_token_type_ids: false
+
+  deberta_v3:
+    experiment_id: "E2.3"
+    role: "primary_model"
+    hf_model_id: "microsoft/deberta-v3-base"
+    hidden_size: 768
+    max_length: 512
+    max_position_embeddings: 512
+    explicit_max_length_required: true
+    params_approx: 184000000
+    license: "mit"
+    supports_token_type_ids: false
+
+  modernbert:
+    experiment_id: "E2.4"
+    role: "long_context_experiment"
+    hf_model_id: "answerdotai/ModernBERT-base"
+    hidden_size: 768
+    max_length: 2048
+    max_position_embeddings: 8192
+    params_approx: 149655232
+    license: "apache-2.0"
+    supports_token_type_ids: false
+
+token_budget:
+  response_budget: 288
+  question_budget: 96
+  min_question_budget: 32
+  special_token_overhead: 4
+  sliding_window_stride: 128
+  sliding_window_max_chunks: 16
+
+architecture:
+  pooling: "masked_mean"          # Options: "masked_mean", "cls"
+  head_type: "independent_sigmoid" # Options: "independent_sigmoid", "classifier_chain", "label_interaction"
+  dropout: 0.15
+  context_mode: "budgeted_truncation" # Options: "budgeted_truncation", "sliding_window", "long_context"
+  chunk_aggregation: "logsumexp"      # Used when context_mode == "sliding_window"
+

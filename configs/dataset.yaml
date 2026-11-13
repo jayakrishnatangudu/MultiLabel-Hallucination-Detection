@@ -1,0 +1,141 @@
+random_seed: 42
+
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  splits_dir: data/splits
+  results_dir: results
+  docs_dir: docs
+  raw_manifest: data/raw/manifest.json
+  preprocessing_report: results/phase1_preprocessing_report.json
+  split_report: results/phase1_split_report.json
+  markdown_report: docs/phase1_data_report.md
+
+preprocessing:
+  min_question_chars: 10
+  min_answer_chars: 15
+  min_question_words: 3
+  min_answer_words: 3
+  max_answer_words: 1500
+  strip_qa_prefixes: true
+  near_duplicate:
+    enabled: true
+    # Thresholds intentionally strict to avoid merging template-similar but distinct entities
+    tfidf_cosine_threshold: 0.90
+    min_rare_token_jaccard: 0.65
+    rare_token_max_df_ratio: 0.02
+    enforce_same_qtype_if_present: true
+    max_audit_borderline_pairs: 25
+    borderline_cosine_low: 0.78
+
+splitting:
+  # Overall group split: 80% train, 10% val, 10% test (test partitioned disjointly into synthetic & natural pools)
+  train_ratio: 0.80
+  val_ratio: 0.10
+  test_synthetic_ratio: 0.08
+  test_natural_ratio: 0.02
+
+datasets:
+  medquad:
+    enabled: true
+    domain: medical
+    has_context: false
+    provider: huggingface_hub
+    repo_id: keivalya/MedQuad-MedicalQnADataset
+    files:
+      - remote_path: medDataset_processed.csv
+        subset: train
+    source_url: https://huggingface.co/datasets/keivalya/MedQuad-MedicalQnADataset
+    upstream_url: https://github.com/abachaa/MedQuAD
+    licensing:
+      hf_card_license: null
+      upstream_license: CC-BY-4.0
+      license_status: upstream_caution
+      redistribution_permitted: true
+      attribution: "Ben Abacha, A., & Demner-Fushman, D. (2019). A question-entailment approach to question answering. BMC Bioinformatics, 20, 1-23."
+      notes: "Mirror of abachaa/MedQuAD (CC BY 4.0). HF card omits license metadata; upstream repo removes answers from 3 MedlinePlus subsets per MedlinePlus copyright."
+
+  legal_qa_v1:
+    enabled: true
+    domain: legal
+    has_context: false
+    provider: huggingface_hub
+    repo_id: dzunggg/legal-qa-v1
+    files:
+      - remote_path: legal_qa_full.csv
+        subset: train
+    source_url: https://huggingface.co/datasets/dzunggg/legal-qa-v1
+    upstream_url: https://huggingface.co/datasets/dzunggg/legal-qa-v1
+    licensing:
+      hf_card_license: null
+      upstream_license: unresolved
+      license_status: unresolved
+      redistribution_permitted: false
+      attribution: "dzunggg/legal-qa-v1 (Hugging Face community dataset; upstream legal Q&A portal provenance unverified)."
+      notes: "LICENSE UNRESOLVED: No license file or metadata on Hugging Face and unverified upstream web QA sources. Do NOT redistribute raw or derived records."
+
+  fiqa:
+    enabled: true
+    domain: finance
+    has_context: false
+    provider: huggingface_hub
+    repo_id: llamafactory/fiqa
+    files:
+      - remote_path: train.json
+        subset: train
+      - remote_path: test.json
+        subset: test
+    source_url: https://huggingface.co/datasets/llamafactory/fiqa
+    upstream_url: https://sites.google.com/view/fiqa/home
+    licensing:
+      hf_card_license: apache-2.0
+      upstream_license: "mixed_upstream_cc_by_sa_and_forum_tos"
+      license_status: upstream_caution
+      redistribution_permitted: false
+      attribution: "Maia, M., Handschuh, S., Freitas, A., Davis, B., McDermott, R., Zarrouk, M., & Balahur, A. (2018). WWW'18 Open Challenge: Financial Opinion Mining and Question Answering."
+      notes: "HF mirror tags apache-2.0, which does not override upstream StackExchange (CC BY-SA) or financial forum platform terms from FiQA 2018. Treat as research-use only without commercial redistribution."
+
+  pubmedqa:
+    enabled: true
+    domain: medical
+    has_context: true
+    provider: huggingface_hub
+    repo_id: qiaojin/PubMedQA
+    files:
+      - remote_path: pqa_labeled/train-00000-of-00001.parquet
+        subset: pqa_labeled
+      - remote_path: pqa_unlabeled/train-00000-of-00001.parquet
+        subset: pqa_unlabeled
+    source_url: https://huggingface.co/datasets/qiaojin/PubMedQA
+    upstream_url: https://github.com/pubmedqa/pubmedqa
+    licensing:
+      hf_card_license: mit
+      upstream_license: MIT
+      license_status: verified_open
+      redistribution_permitted: true
+      attribution: "Jin, Q., Dhingra, B., Liu, Z., Cohen, W. W., & Lu, X. (2019). PubMedQA: A Dataset for Biomedical Research Question Answering. EMNLP-IJCNLP 2019."
+      notes: "Code and dataset licensed under MIT (github.com/pubmedqa/pubmedqa). Source abstracts derive from PubMed/MEDLINE (retain PMID attribution via pubid)."
+
+  cuad_qa:
+    enabled: true
+    domain: legal
+    has_context: true
+    provider: github_zip
+    repo_id: TheAtticusProject/cuad
+    zip_url: https://github.com/TheAtticusProject/cuad/raw/main/data.zip
+    api_commit_url: https://api.github.com/repos/TheAtticusProject/cuad/commits/main
+    archive_members:
+      - member_path: train_separate_questions.json
+        subset: train
+      - member_path: test.json
+        subset: test
+    source_url: https://github.com/TheAtticusProject/cuad
+    upstream_url: https://www.atticusprojectai.org/cuad
+    licensing:
+      hf_card_license: cc-by-4.0
+      upstream_license: CC-BY-4.0
+      license_status: upstream_caution
+      redistribution_permitted: true
+      attribution: "Hendrycks, D., Burns, C., Chen, A., & Ball, S. (2021). CUAD: An Expert-Annotated NLP Dataset for Legal Contract Review. NeurIPS 2021."
+      notes: "Official HF dataset cards (theatticusproject/cuad & cuad-qa) specify CC BY 4.0, though the GitHub repo lacks a root LICENSE file."
+

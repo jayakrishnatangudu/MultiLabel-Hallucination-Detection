@@ -1,0 +1,36 @@
+{
+  "sampling_summary": {
+    "source_split_pool": "test_natural_pool",
+    "unique_questions": 120,
+    "total_natural_response_slots": 360,
+    "models_per_question": 3,
+    "unique_group_ids": 106,
+    "by_dataset_questions": {
+      "medquad": 24,
+      "pubmedqa": 24,
+      "legal_qa_v1": 18,
+      "cuad_qa": 24,
+      "fiqa": 30
+    },
+    "by_dataset_unique_groups": {
+      "medquad": 24,
+      "pubmedqa": 24,
+      "legal_qa_v1": 18,
+      "cuad_qa": 10,
+      "fiqa": 30
+    }
+  },
+  "generated_count": 3,
+  "budget_guard": {
+    "max_pilot_budget_usd": 10.0,
+    "enforce_strict_budget_stop": true,
+    "cumulative_cost_usd": 0.0,
+    "halted_safely": false,
+    "halt_reason": null,
+    "halted_at_sample_id": null,
+    "blocked_calls_prevented": 0
+  },
+  "resume_mode": true,
+  "new_slots_processed_this_run": 3,
+  "config_sha256": "884b76ec272f57216a220506c5a4fe1e4d2f84514f082eede11dd130bf7fcf6a"
+}

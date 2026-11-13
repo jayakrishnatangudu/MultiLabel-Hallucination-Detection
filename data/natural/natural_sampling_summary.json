@@ -1,0 +1,23 @@
+{
+  "source_split_pool": "test_natural_pool",
+  "unique_questions": 120,
+  "total_natural_response_slots": 360,
+  "models_per_question": 3,
+  "unique_group_ids": 106,
+  "by_dataset_questions": {
+    "medquad": 24,
+    "pubmedqa": 24,
+    "legal_qa_v1": 18,
+    "cuad_qa": 24,
+    "fiqa": 30
+  },
+  "by_dataset_unique_groups": {
+    "medquad": 24,
+    "pubmedqa": 24,
+    "legal_qa_v1": 18,
+    "cuad_qa": 10,
+    "fiqa": 30
+  },
+  "exported_item_count": 360,
+  "config_sha256": "2616ed4ce796dcbed5f920be6a77da4ba1cdf0e47cc7ac5c6b052c66bf08ffe3"
+}

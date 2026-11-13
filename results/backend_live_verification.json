@@ -1,0 +1,241 @@
+{
+  "verification_timestamp_utc": "2026-11-12T08:22:44.667174+00:00",
+  "overall_status": "passed",
+  "api_keys_redacted": true,
+  "successful_checks": [
+    "cross_judge_independence",
+    "gemini_models_availability",
+    "gemini_structured_json_generation",
+    "gemini_canonical_schema_validation",
+    "openai_models_availability",
+    "openai_structured_json_audit",
+    "openai_canonical_schema_validation",
+    "budget_guard_over_cap_boundary"
+  ],
+  "failed_checks": [],
+  "provider_errors": {},
+  "validation_errors": {},
+  "cross_judge_independence": {
+    "distinct_model_id": true,
+    "distinct_model_family": true,
+    "distinct_vendor_lineage": true,
+    "distinct_provider": true,
+    "diagnostic_only_never_gold": true,
+    "independence_verified": true
+  },
+  "retry_policy": {
+    "transient_http_status_codes": [
+      429,
+      500,
+      502,
+      503,
+      504
+    ],
+    "synthetic_generator": {
+      "max_retries": 3,
+      "retry_base_delay_sec": 5.0,
+      "retry_max_delay_sec": 45.0
+    },
+    "cross_judge_auditor": {
+      "max_retries": 2,
+      "retry_base_delay_sec": 2.0,
+      "retry_max_delay_sec": 15.0
+    }
+  },
+  "synthetic_generator": {
+    "passed": true,
+    "configured_model_id": "gemini-3.5-flash-lite",
+    "provider": "google_gemini",
+    "api_base_resolved": "https://generativelanguage.googleapis.com/v1beta",
+    "api_key_env_used": "GEMINI_API_KEY",
+    "models_check": {
+      "passed": true,
+      "advertised_models_count": 63,
+      "latency_ms": 1069.22,
+      "attempts": 2,
+      "rate_limit_headers": {}
+    },
+    "generation_check": {
+      "passed": true,
+      "response_model_id": "gemini-3.5-flash-lite",
+      "latency_ms": 2339.06
+    },
+    "stage1_validation": {
+      "passed": true,
+      "rejection_reasons": [],
+      "normalized_edit_distance": 0.25,
+      "length_ratio": 1.0
+    },
+    "generation_attempt_record_validated": true,
+    "strategy_b_json_schema_validated": true,
+    "input_tokens": 1014,
+    "output_tokens_billed": 183,
+    "thoughts_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2339.06,
+    "total_latency_ms": 3818.02,
+    "models_endpoint_rate_headers": {},
+    "response_rate_limit_headers": {},
+    "error": null,
+    "advertised_models_count": 63,
+    "matched_model_metadata": {
+      "name": "models/gemini-3.5-flash-lite",
+      "version": "3.5-flash-lite-07-2026",
+      "displayName": "Gemini 3.5 Flash Lite",
+      "description": "Gemini 3.5 Flash Lite",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 65536,
+      "supportedGenerationMethods": [
+        "generateContent",
+        "countTokens",
+        "createCachedContent",
+        "batchGenerateContent"
+      ],
+      "temperature": 1,
+      "topP": 0.95,
+      "topK": 64,
+      "maxTemperature": 2,
+      "thinking": true
+    },
+    "sample_request_payload_keys": [
+      "maxOutputTokens",
+      "responseMimeType",
+      "seed",
+      "thinkingConfig"
+    ],
+    "response_model_id": "gemini-3.5-flash-lite",
+    "sample_json_parsed": {
+      "generated_response": "Intravenous atropine administered via central venous catheter is the first-line emergency treatment for acute anaphylaxis because alpha-1 vasoconstriction and beta-2 bronchodilation rapidly reverse airway edema and distributive shock.",
+      "per_label_modifications": {
+        "factual_inconsistency": "Intravenous atropine administered via central venous catheter replaces the real-world first-line treatment (intramuscular epinephrine) with a factually incorrect medication and route for anaphylaxis."
+      },
+      "negative_constraints_verified": "Checked that factual_fabrication was avoided by not inventing fake studies or citations, instruction_inconsistency was avoided by directly addressing the medication and route for anaphylaxis, logical_inconsistency was avoided by maintaining internal consistency without self-contradiction, and context_inconsistency was avoided as no context was provided."
+    }
+  },
+  "cross_judge_auditor": {
+    "passed": true,
+    "configured_model_id": "qwen3:4b-instruct",
+    "provider": "ollama",
+    "api_base_resolved": "http://127.0.0.1:11434/v1",
+    "api_key_env_used": "OLLAMA_API_KEY",
+    "audit_input_source": "live_gemini_smoke_output",
+    "used_controlled_fixture": false,
+    "controlled_fixture": null,
+    "models_check": {
+      "passed": true,
+      "advertised_models_count": 1,
+      "latency_ms": 64.1,
+      "attempts": 1,
+      "rate_limit_headers": {}
+    },
+    "audit_check": {
+      "passed": true,
+      "response_model_id": "qwen3:4b-instruct",
+      "latency_ms": 86358.31,
+      "audit_input_source": "live_gemini_smoke_output",
+      "used_controlled_fixture": false
+    },
+    "cross_judge_json_schema_validated": true,
+    "auto_detection_tier_validated": true,
+    "multilabel_record_validated": true,
+    "multilabel_validation_status": "auto_flagged",
+    "predicted_labels_vector": [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "input_tokens": 880,
+    "output_tokens": 528,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 86358.31,
+    "total_latency_ms": 86424.23,
+    "models_endpoint_rate_headers": {},
+    "response_rate_limit_headers": {},
+    "error": null,
+    "advertised_models_count": 1,
+    "matched_model_metadata": {
+      "id": "qwen3:4b-instruct",
+      "object": "model",
+      "created": 1794471749,
+      "owned_by": "library"
+    },
+    "sample_request_payload_keys": [
+      "max_tokens",
+      "messages",
+      "model",
+      "response_format",
+      "seed",
+      "temperature",
+      "top_p"
+    ],
+    "response_model_id": "qwen3:4b-instruct",
+    "diagnostic_flags": [
+      "cross_judge_spillover_flagged",
+      "low_coherence_score:1.0"
+    ],
+    "sample_json_parsed": {
+      "labels": {
+        "factual_inconsistency": 1,
+        "factual_fabrication": 1,
+        "instruction_inconsistency": 1,
+        "logical_inconsistency": 1,
+        "context_inconsistency": 0
+      },
+      "evidence": {
+        "factual_inconsistency": "Intravenous atropine administered via central venous catheter is the first-line emergency treatment for acute anaphylaxis because alpha-1 vasoconstriction and beta-2 bronchodilation rapidly reverse airway edema and distributive shock.",
+        "factual_fabrication": "Intravenous atropine administered via central venous catheter is the first-line emergency treatment for acute anaphylaxis because alpha-1 vasoconstriction and beta-2 bronchodilation rapidly reverse airway edema and distributive shock.",
+        "instruction_inconsistency": "The response incorrectly states 'intravenous atropine' as the first-line treatment for acute anaphylaxis, whereas the verified domain reference answer specifies 'intramuscular epinephrine' as the first-line treatment. The question explicitly asks for the first-line emergency medication and route, and the response fails to provide the correct medication (epinephrine) and instead offers atropine, which is not standard or first-line for anaphylaxis.",
+        "logical_inconsistency": "Atropine does not produce alpha-1 vasoconstriction or beta-2 bronchodilation; these effects are mediated by epinephrine. The claim that atropine induces alpha-1 vasoconstriction and beta-2 bronchodilation is factually incorrect and contradicts pharmacological mechanisms. This creates a logical inconsistency within the reasoning chain of the response.",
+        "context_inconsistency": "null"
+      },
+      "coherence_score_1_to_5": 1,
+      "diagnostic_notes": "The candidate response contains multiple critical errors: it substitutes epinephrine with atropine, which is not the standard first-line treatment for anaphylaxis; atropine lacks the pharmacological mechanisms cited (alpha-1 vasoconstriction, beta-2 bronchodilation); and the reasoning is pharmacologically invalid. These constitute factual inaccuracies and logical contradictions. The response fails to meet the instruction by providing the wrong medication and route. Despite the absence of supplied context, the error is grounded in real-world medical knowledge, making it a clear case of factual inconsistency and fabrication."
+    }
+  },
+  "canonical_schema_validation": {
+    "source_qa_record_validated": true,
+    "strategy_b_json_schema_validated": true,
+    "generation_attempt_record_validated": true,
+    "cross_judge_json_schema_validated": true,
+    "auto_detection_tier_validated": true,
+    "multilabel_record_validated": true,
+    "multilabel_validation_status": "auto_flagged",
+    "predicted_labels_vector": [
+      1,
+      1,
+      1,
+      1,
+      0
+    ]
+  },
+  "budget_guard_verification": {
+    "passed": true,
+    "max_pilot_budget_usd": 10.0,
+    "enforce_strict_budget_stop": true,
+    "live_smoke_spend_usd": 0.0,
+    "live_smoke_remaining_budget_usd": 10.0,
+    "boundary_over_cap_halted_safely": true,
+    "boundary_blocked_calls_prevented": 1,
+    "boundary_request_rejected_before_api_call": true,
+    "boundary_halt_reason": "Stopped safely before BUDGET_GUARD_BOUNDARY_PROBE: cumulative_cost_usd=$10.000000 + est_max_next=$0.000000 would exceed max_pilot_budget_usd=$10.000000"
+  },
+  "timings_ms": {
+    "total_probe_ms": 90249.73,
+    "gemini_total_ms": 3818.02,
+    "openai_total_ms": 86424.23
+  },
+  "rate_limit_summary": {
+    "synthetic_generator": {
+      "models_endpoint": {},
+      "inference_endpoint": {}
+    },
+    "cross_judge_auditor": {
+      "models_endpoint": {},
+      "inference_endpoint": {}
+    }
+  },
+  "total_smoke_cost_usd": 0.0
+}

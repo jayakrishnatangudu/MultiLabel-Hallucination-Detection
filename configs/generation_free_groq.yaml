@@ -1,0 +1,352 @@
+# Free-Tier Operational Generation & Independent Cross-Judge Configuration
+# Inherits approved methodology, taxonomy, domain/context quotas, and strict $10 budget guard
+# while switching the cross-judge to Groq Free Tier (`openai/gpt-oss-120b`, zero credit card)
+# and adding Gemini streaming + client-side RPM/TPM pacing.
+
+schema_version: "2.0"
+random_seed: 42
+
+paths:
+  source_splits:
+    train: "data/splits/source_train.jsonl"
+    val: "data/splits/source_val.jsonl"
+    test_synthetic_pool: "data/splits/source_test_synthetic_pool.jsonl"
+    test_natural_pool: "data/splits/source_test_natural_pool.jsonl"
+  prompts_dir: "prompts/v1_0"
+  pilot_output_dir: "data/synthetic/pilot_e0"
+  full_output_dir: "data/synthetic/full"
+  natural_output_dir: "data/natural"
+  reports_dir: "results"
+
+taxonomy:
+  labels:
+    - "factual_inconsistency"
+    - "factual_fabrication"
+    - "instruction_inconsistency"
+    - "logical_inconsistency"
+    - "context_inconsistency"
+  sequential_injection_order:
+    - "instruction_inconsistency"
+    - "factual_inconsistency"
+    - "context_inconsistency"
+    - "factual_fabrication"
+    - "logical_inconsistency"
+  reverse_injection_order:
+    - "logical_inconsistency"
+    - "factual_fabrication"
+    - "context_inconsistency"
+    - "factual_inconsistency"
+    - "instruction_inconsistency"
+
+source_policies:
+  medquad:
+    domain: "medical"
+    has_context: false
+    redistribution_permitted: true
+    license: "CC-BY-4.0"
+  pubmedqa:
+    domain: "medical"
+    has_context: true
+    redistribution_permitted: true
+    license: "MIT"
+    pqa_labeled_target_share: 0.20
+  legal_qa_v1:
+    domain: "legal"
+    has_context: false
+    redistribution_permitted: false
+    license: "unresolved"
+    exclude_from_public_release: true
+  cuad_qa:
+    domain: "legal"
+    has_context: true
+    redistribution_permitted: true
+    license: "CC-BY-4.0 (Zenodo 4595826 / HF)"
+    evidence_window:
+      enabled_for_prompting_only: true
+      preserve_full_context_on_record: true
+      max_prompt_context_words: 1800
+      preamble_words: 250
+      window_words_around_span: 750
+  fiqa:
+    domain: "finance"
+    has_context: false
+    redistribution_permitted: false
+    license: "upstream_caution (mixed CC BY-SA / forum ToS)"
+    exclude_from_public_release: true
+
+backends:
+  # Google Gemini Free Tier generator with SSE streaming and 180s timeout to prevent ReadTimeout stalls.
+  # Pace at 12.5s min interval (~4.8 RPM) within documented 5 RPM Free Tier limit.
+  synthetic_generator:
+    provider: "google_gemini"
+    model_family: "gemini"
+    model_id: "gemini-3.5-flash-lite"
+    api_mode: "gemini_native_rest"
+    api_base_env: "GEMINI_API_BASE"
+    default_api_base: "https://generativelanguage.googleapis.com/v1beta"
+    api_key_env: "GEMINI_API_KEY"
+    model_availability_verified: true
+    pricing_verified: true
+    use_streaming: true
+    min_request_interval_sec: 12.5
+    tpm_limit: 250000
+    decoding:
+      max_tokens: 2048
+      thinking_level: "low"
+      omit_deprecated_sampling_params: true
+    max_retries_per_sample: 3
+    retry_temperature_step: 0.0
+    request_timeout_sec: 300
+    http_max_retries: 3
+    http_retry_base_delay_sec: 5.0
+    http_retry_max_delay_sec: 45.0
+    pricing_usd_per_1m_tokens:
+      input: 0.0
+      output: 0.0
+
+  # Independent Free-Tier Cross-Judge: Groq `openai/gpt-oss-120b`
+  # Preserves distinct provider (groq), distinct vendor lineage (openai_proprietary != google_deepmind),
+  # and non-training default privacy for legal_qa_v1 / fiqa.
+  # Note: Groq GPT-OSS requires reasoning_effort in {low, medium, high}, reasoning_format, and >=1536 max_tokens.
+  cross_judge_auditor:
+    provider: "groq"
+    model_family: "gpt"
+    model_id: "openai/gpt-oss-20b"
+    api_mode: "openai_compatible"
+    api_base_env: "GROQ_API_BASE"
+    default_api_base: "https://api.groq.com/openai/v1"
+    api_key_env: "GROQ_API_KEY"
+    api_key_fallback_envs: ["JUDGE_API_KEY"]
+    model_availability_verified: true
+    pricing_verified: true
+    min_request_interval_sec: 15.0
+    tpm_limit: 8000
+    decoding:
+      temperature: 0.0
+      top_p: 1.0
+      max_tokens: 1536
+      use_max_completion_tokens: false
+      reasoning_effort: "low"
+      reasoning_format: "hidden"
+      response_format:
+        type: "json_object"
+    request_timeout_sec: 120
+    http_max_retries: 3
+    http_retry_base_delay_sec: 5.0
+    http_retry_max_delay_sec: 45.0
+    pricing_usd_per_1m_tokens:
+      input: 0.0
+      output: 0.0
+
+  cross_judge_independence_policy:
+    require_distinct_model_id: true
+    require_distinct_model_family: true
+    require_distinct_provider: true
+    disallowed_same_vendor_families:
+      - ["gemini", "gemma"]
+      - ["gpt", "o1", "o3", "o4"]
+    diagnostic_only_never_gold: true
+
+  natural_qa_models:
+    - model_id: "gemini-3.5-flash-lite"
+      provider: "google_gemini"
+      model_family: "gemini"
+      api_mode: "gemini_native_rest"
+      api_base_env: "GEMINI_API_BASE"
+      default_api_base: "https://generativelanguage.googleapis.com/v1beta"
+      api_key_env: "GEMINI_API_KEY"
+      pricing_usd_per_1m_tokens:
+        input: 0.0
+        output: 0.0
+      verified: true
+      temperature: 0.7
+      max_tokens: 512
+    - model_id: "openai/gpt-oss-120b"
+      provider: "groq"
+      model_family: "gpt"
+      api_mode: "openai_compatible"
+      api_base_env: "GROQ_API_BASE"
+      default_api_base: "https://api.groq.com/openai/v1"
+      api_key_env: "GROQ_API_KEY"
+      pricing_usd_per_1m_tokens:
+        input: 0.0
+        output: 0.0
+      verified: true
+      temperature: 0.7
+      max_tokens: 768
+    - model_id: "qwen/qwen3.8-27b"
+      provider: "groq"
+      model_family: "qwen"
+      api_mode: "openai_compatible"
+      api_base_env: "GROQ_API_BASE"
+      default_api_base: "https://api.groq.com/openai/v1"
+      api_key_env: "GROQ_API_KEY"
+      pricing_usd_per_1m_tokens:
+        input: 0.0
+        output: 0.0
+      verified: true
+      temperature: 0.7
+      max_tokens: 512
+
+prompts:
+  version: "v1.0"
+  strategy_a_sequential: "prompts/v1_0/strategy_a_sequential.md"
+  strategy_b_joint: "prompts/v1_0/strategy_b_joint.md"
+  strategy_c_span_editing: "prompts/v1_0/strategy_c_span_editing.md"
+  cross_judge_auditor: "prompts/v1_0/cross_judge_auditor.md"
+  natural_qa_generation: "prompts/v1_0/natural_qa_generation.md"
+  zero_shot_detector: "prompts/v1_0/zero_shot_detector.md"
+
+eligibility_constraints:
+  G0: { min_answer_words: 3, min_clauses: 1 }
+  G1: { min_answer_words: 6, min_clauses: 1 }
+  G2: { min_answer_words: 18, min_clauses: 2 }
+  G3: { min_answer_words: 40, min_clauses: 3 }
+  G4: { min_answer_words: 60, min_clauses: 4 }
+  G5: { min_answer_words: 80, min_clauses: 5, require_context: true }
+
+automated_validation:
+  refusal_patterns:
+    - "i'm sorry"
+    - "i cannot"
+    - "i can't"
+    - "as an ai"
+    - "unable to fulfill"
+    - "cannot provide false"
+    - "against my guidelines"
+  min_normalized_edit_distance_for_perturbed: 0.05
+  min_length_ratio: 0.60
+  max_length_ratio: 2.20
+  short_answer_word_threshold: 25
+  short_answer_max_words_cap: 95
+  enforce_zero_ci_when_no_context: true
+
+pilot_e0:
+  enabled_only_after_approval: true
+  source_split_pool: "train"
+  total_unique_source_questions: 100
+  total_paired_source_items: 80
+  total_clean_controls: 20
+  total_evaluation_items: 260
+  order_sensitivity_extra_outputs: 36
+  total_evaluation_items_including_order_addon: 296
+  max_pilot_budget_usd: 10.0
+  enforce_strict_budget_stop: true
+  domain_dataset_quotas_base_items:
+    medquad: { perturbed: 16, clean: 4 }
+    pubmedqa: { perturbed: 16, clean: 4 }
+    legal_qa_v1: { perturbed: 12, clean: 3 }
+    cuad_qa: { perturbed: 16, clean: 4 }
+    fiqa: { perturbed: 20, clean: 5 }
+  combination_quotas_paired_base:
+    "10000": 6
+    "01000": 5
+    "00100": 5
+    "00010": 5
+    "00001": 4
+    "11000": 4
+    "10010": 3
+    "01010": 4
+    "10100": 3
+    "01100": 3
+    "00110": 3
+    "10001": 2
+    "01001": 2
+    "00011": 3
+    "00101": 3
+    "11010": 4
+    "11100": 2
+    "10110": 2
+    "01110": 1
+    "11001": 3
+    "10011": 3
+    "01011": 2
+    "10101": 1
+    "11110": 2
+    "11011": 2
+    "11101": 1
+    "11111": 2
+  context_non_ci_tier_quotas:
+    G1: 2
+    G2: 2
+  order_sensitivity_subset:
+    enabled: true
+    subset_size: 18
+    orders: ["forward", "reverse", "randomized"]
+    orders_extra_calls: 36
+  decision_gates:
+    min_valid_rate_after_retries: 0.95
+    min_g1_g2_target_recall: 0.85
+    min_g3_target_recall: 0.78
+    max_macro_spillover_rate: 0.12
+    max_clean_false_positive_rate: 0.08
+    stress_tier_retention_min_kappa: 0.65
+    stress_tier_retention_min_coherence: 3.5
+    stress_tier_retention_min_recall: 0.70
+
+full_generation:
+  enabled_only_after_pilot_signoff: true
+  total_target_records: 12000
+  split_ratios:
+    train: 0.80
+    val: 0.10
+    test_synthetic: 0.10
+  dataset_quotas_total:
+    medquad: 2400
+    pubmedqa: 2400
+    legal_qa_v1: 1800
+    cuad_qa: 2400
+    fiqa: 3000
+  combination_quotas:
+    no_context:
+      total: 7200
+      "00000": 1296
+      "10000": 600
+      "01000": 600
+      "00100": 500
+      "00010": 460
+      "11000": 564
+      "10010": 460
+      "01010": 380
+      "10100": 420
+      "01100": 420
+      "00110": 240
+      "11010": 420
+      "11100": 320
+      "10110": 180
+      "01110": 160
+      "11110": 180
+    with_context:
+      total: 4800
+      "00000": 864
+      "10000": 200
+      "01000": 200
+      "00100": 160
+      "00010": 160
+      "00001": 720
+      "11000": 120
+      "10010": 84
+      "01010": 72
+      "10100": 60
+      "01100": 60
+      "10001": 360
+      "01001": 360
+      "00011": 240
+      "00101": 240
+      "11010": 120
+      "11001": 220
+      "10011": 160
+      "01011": 120
+      "10101": 100
+      "11011": 60
+      "11101": 30
+      "10111": 30
+      "11111": 60
+  human_gold_subsets:
+    test_synthetic_gold_target: 400
+    test_natural_target: 360
+    natural_group_all_responses_by_question: true
+    raters_per_synthetic_gold: 2
+    raters_per_natural_sample: 3
+    require_adjudication_on_disagreement: true
+

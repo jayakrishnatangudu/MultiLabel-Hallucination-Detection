@@ -1,0 +1,70 @@
+{
+  "split_name": "val",
+  "strategy_name": "strategy_b",
+  "sampling_summary": {
+    "split_name": "val",
+    "source_split_pool": "val",
+    "total_target_slots": 25,
+    "strategy_name": "strategy_b",
+    "unique_source_records": 25,
+    "unique_group_ids": 25,
+    "by_dataset": {
+      "cuad_qa": 5,
+      "pubmedqa": 5,
+      "fiqa": 6,
+      "legal_qa_v1": 4,
+      "medquad": 5
+    },
+    "by_domain": {
+      "legal": 9,
+      "medical": 10,
+      "finance": 6
+    },
+    "by_context": {
+      "True": 10,
+      "False": 15
+    },
+    "by_tier": {
+      "G3": 3,
+      "G2": 10,
+      "G1": 7,
+      "G0": 5
+    },
+    "combination_counts": {
+      "11001": 1,
+      "00011": 1,
+      "00101": 1,
+      "01001": 1,
+      "10001": 1,
+      "00001": 2,
+      "01000": 2,
+      "00000": 5,
+      "11010": 1,
+      "11100": 1,
+      "00110": 1,
+      "01010": 1,
+      "01100": 1,
+      "10010": 1,
+      "10100": 1,
+      "11000": 1,
+      "00010": 1,
+      "00100": 1,
+      "10000": 1
+    }
+  },
+  "accepted_count": 25,
+  "rejected_count": 0,
+  "attempt_count": 23,
+  "budget_guard": {
+    "max_pilot_budget_usd": 10.0,
+    "enforce_strict_budget_stop": true,
+    "cumulative_cost_usd": 0.0,
+    "halted_safely": false,
+    "halt_reason": null,
+    "halted_at_sample_id": null,
+    "blocked_calls_prevented": 0
+  },
+  "resume_mode": true,
+  "new_slots_processed_this_run": 25,
+  "config_sha256": "7857b28f2ea803e8a1eef139b907f790d03f652a4d0c92784db5a62a776a4c65"
+}

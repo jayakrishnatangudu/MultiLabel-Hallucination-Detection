@@ -1,0 +1,147 @@
+{
+  "random_seed": 42,
+  "ratios": {
+    "train": 0.8,
+    "val": 0.1,
+    "test_synthetic_pool": 0.08,
+    "test_natural_pool": 0.02
+  },
+  "total_records": 99461,
+  "total_groups": 86933,
+  "split_record_counts": {
+    "train": 79628,
+    "val": 9886,
+    "test_synthetic_pool": 7922,
+    "test_natural_pool": 2025
+  },
+  "split_group_counts": {
+    "train": 69546,
+    "val": 8694,
+    "test_synthetic_pool": 6955,
+    "test_natural_pool": 1738
+  },
+  "by_dataset": {
+    "medquad": {
+      "train": 13010,
+      "val": 1638,
+      "test_synthetic_pool": 1260,
+      "test_natural_pool": 325
+    },
+    "legal_qa_v1": {
+      "train": 2974,
+      "val": 372,
+      "test_synthetic_pool": 298,
+      "test_natural_pool": 74
+    },
+    "fiqa": {
+      "train": 5163,
+      "val": 645,
+      "test_synthetic_pool": 517,
+      "test_natural_pool": 129
+    },
+    "pubmedqa": {
+      "train": 49778,
+      "val": 6220,
+      "test_synthetic_pool": 4985,
+      "test_natural_pool": 1244
+    },
+    "cuad_qa": {
+      "train": 8703,
+      "val": 1011,
+      "test_synthetic_pool": 862,
+      "test_natural_pool": 253
+    }
+  },
+  "by_subset": {
+    "medquad/train": {
+      "train": 13010,
+      "val": 1638,
+      "test_synthetic_pool": 1260,
+      "test_natural_pool": 325
+    },
+    "legal_qa_v1/train": {
+      "train": 2974,
+      "val": 372,
+      "test_synthetic_pool": 298,
+      "test_natural_pool": 74
+    },
+    "fiqa/train": {
+      "train": 4369,
+      "val": 546,
+      "test_synthetic_pool": 437,
+      "test_natural_pool": 109
+    },
+    "fiqa/test": {
+      "train": 794,
+      "val": 99,
+      "test_synthetic_pool": 80,
+      "test_natural_pool": 20
+    },
+    "pubmedqa/pqa_labeled": {
+      "train": 800,
+      "val": 100,
+      "test_synthetic_pool": 80,
+      "test_natural_pool": 20
+    },
+    "pubmedqa/pqa_unlabeled": {
+      "train": 48978,
+      "val": 6120,
+      "test_synthetic_pool": 4905,
+      "test_natural_pool": 1224
+    },
+    "cuad_qa/train": {
+      "train": 7733,
+      "val": 919,
+      "test_synthetic_pool": 783,
+      "test_natural_pool": 236
+    },
+    "cuad_qa/test": {
+      "train": 970,
+      "val": 92,
+      "test_synthetic_pool": 79,
+      "test_natural_pool": 17
+    }
+  },
+  "by_domain": {
+    "medical": {
+      "train": 62788,
+      "val": 7858,
+      "test_synthetic_pool": 6245,
+      "test_natural_pool": 1569
+    },
+    "legal": {
+      "train": 11677,
+      "val": 1383,
+      "test_synthetic_pool": 1160,
+      "test_natural_pool": 327
+    },
+    "finance": {
+      "train": 5163,
+      "val": 645,
+      "test_synthetic_pool": 517,
+      "test_natural_pool": 129
+    }
+  },
+  "by_context": {
+    "no_context": {
+      "train": 21147,
+      "val": 2655,
+      "test_synthetic_pool": 2075,
+      "test_natural_pool": 528
+    },
+    "with_context": {
+      "train": 58481,
+      "val": 7231,
+      "test_synthetic_pool": 5847,
+      "test_natural_pool": 1497
+    }
+  },
+  "leakage_audit": {
+    "unique_groups_checked": 86933,
+    "unique_documents_checked": 62735,
+    "unique_context_free_questions_checked": 24361,
+    "leaked_groups": 0,
+    "leaked_documents": 0,
+    "leaked_context_free_questions": 0
+  }
+}

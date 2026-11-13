@@ -1,0 +1,199 @@
+{
+  "strategy_name": "strategy_a",
+  "total_planned_items": 12000,
+  "splits": {
+    "train": {
+      "split_name": "train",
+      "source_split_pool": "train",
+      "total_target_slots": 9600,
+      "strategy_name": "strategy_a",
+      "unique_source_records": 9600,
+      "unique_group_ids": 8087,
+      "by_dataset": {
+        "cuad_qa": 1920,
+        "pubmedqa": 1920,
+        "fiqa": 2400,
+        "legal_qa_v1": 1440,
+        "medquad": 1920
+      },
+      "by_domain": {
+        "legal": 3360,
+        "medical": 3840,
+        "finance": 2400
+      },
+      "by_context": {
+        "True": 3840,
+        "False": 5760
+      },
+      "by_tier": {
+        "G5": 48,
+        "G4": 240,
+        "G3": 1440,
+        "G2": 3264,
+        "G1": 2880,
+        "G0": 1728
+      },
+      "combination_counts": {
+        "11111": 48,
+        "10111": 24,
+        "11011": 48,
+        "11101": 24,
+        "01011": 96,
+        "10011": 128,
+        "10101": 80,
+        "11001": 176,
+        "11010": 432,
+        "00011": 192,
+        "00101": 192,
+        "01001": 288,
+        "01010": 362,
+        "01100": 384,
+        "10001": 288,
+        "10010": 435,
+        "10100": 384,
+        "11000": 547,
+        "00001": 576,
+        "00010": 496,
+        "00100": 528,
+        "01000": 640,
+        "10000": 640,
+        "00000": 1728,
+        "11110": 144,
+        "01110": 128,
+        "10110": 144,
+        "11100": 256,
+        "00110": 192
+      },
+      "exported_item_count": 9600
+    },
+    "val": {
+      "split_name": "val",
+      "source_split_pool": "val",
+      "total_target_slots": 1200,
+      "strategy_name": "strategy_a",
+      "unique_source_records": 1200,
+      "unique_group_ids": 1011,
+      "by_dataset": {
+        "cuad_qa": 240,
+        "pubmedqa": 240,
+        "fiqa": 300,
+        "legal_qa_v1": 180,
+        "medquad": 240
+      },
+      "by_domain": {
+        "legal": 420,
+        "medical": 480,
+        "finance": 300
+      },
+      "by_context": {
+        "True": 480,
+        "False": 720
+      },
+      "by_tier": {
+        "G5": 6,
+        "G4": 30,
+        "G3": 180,
+        "G2": 408,
+        "G1": 360,
+        "G0": 216
+      },
+      "combination_counts": {
+        "11111": 6,
+        "10111": 3,
+        "11011": 6,
+        "11101": 3,
+        "01011": 12,
+        "10011": 16,
+        "10101": 10,
+        "11001": 22,
+        "11010": 54,
+        "00011": 24,
+        "00101": 24,
+        "01001": 36,
+        "01010": 45,
+        "01100": 48,
+        "10001": 36,
+        "10010": 55,
+        "10100": 48,
+        "11000": 68,
+        "00001": 72,
+        "00010": 62,
+        "00100": 66,
+        "01000": 80,
+        "10000": 80,
+        "00000": 216,
+        "11110": 18,
+        "01110": 16,
+        "10110": 18,
+        "11100": 32,
+        "00110": 24
+      },
+      "exported_item_count": 1200
+    },
+    "test_synthetic": {
+      "split_name": "test_synthetic",
+      "source_split_pool": "test_synthetic_pool",
+      "total_target_slots": 1200,
+      "strategy_name": "strategy_a",
+      "unique_source_records": 1200,
+      "unique_group_ids": 1000,
+      "by_dataset": {
+        "cuad_qa": 240,
+        "pubmedqa": 240,
+        "fiqa": 300,
+        "legal_qa_v1": 180,
+        "medquad": 240
+      },
+      "by_domain": {
+        "legal": 420,
+        "medical": 480,
+        "finance": 300
+      },
+      "by_context": {
+        "True": 480,
+        "False": 720
+      },
+      "by_tier": {
+        "G5": 6,
+        "G4": 30,
+        "G3": 180,
+        "G2": 408,
+        "G1": 360,
+        "G0": 216
+      },
+      "combination_counts": {
+        "11111": 6,
+        "10111": 3,
+        "11011": 6,
+        "11101": 3,
+        "01011": 12,
+        "10011": 16,
+        "10101": 10,
+        "11001": 22,
+        "11010": 54,
+        "00011": 24,
+        "00101": 24,
+        "01001": 36,
+        "01010": 45,
+        "01100": 48,
+        "10001": 36,
+        "10010": 55,
+        "10100": 48,
+        "11000": 68,
+        "00001": 72,
+        "00010": 62,
+        "00100": 66,
+        "01000": 80,
+        "10000": 80,
+        "00000": 216,
+        "11110": 18,
+        "01110": 16,
+        "10110": 18,
+        "11100": 32,
+        "00110": 24
+      },
+      "exported_item_count": 1200
+    }
+  },
+  "config_sha256": "2616ed4ce796dcbed5f920be6a77da4ba1cdf0e47cc7ac5c6b052c66bf08ffe3"
+}

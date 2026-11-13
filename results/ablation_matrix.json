@@ -1,0 +1,97 @@
+{
+  "ablations": [
+    {
+      "ablation_id": "A1_data_composition",
+      "research_question": "Does training on single-label data detect co-occurring hallucinations?",
+      "conditions": [
+        "clean_plus_single",
+        "clean_plus_multi",
+        "clean_plus_single_and_multi"
+      ],
+      "backbone": "deberta_v3"
+    },
+    {
+      "ablation_id": "A2_threshold_sensitivity",
+      "research_question": "Gain & stability of val-only per-label threshold tuning vs fixed 0.50.",
+      "conditions": [
+        "tau_0.50",
+        "val_tuned_per_label_tau"
+      ],
+      "grid": {
+        "baseline_tau": 0.5,
+        "min_tau": 0.05,
+        "max_tau": 0.95,
+        "step": 0.01
+      }
+    },
+    {
+      "ablation_id": "A3_calibration_temperature_scaling",
+      "research_question": "ECE & Brier improvement under global vs per-label Temperature Scaling.",
+      "conditions": [
+        "raw_sigmoid",
+        "global_temperature",
+        "per_label_temperature"
+      ]
+    },
+    {
+      "ablation_id": "A4_context_processing",
+      "research_question": "512-token response-preserving truncation vs sliding window vs ModernBERT 2048/4096.",
+      "conditions": [
+        {
+          "backbone": "deberta_v3",
+          "context_mode": "budgeted_truncation",
+          "max_length": 512
+        },
+        {
+          "backbone": "deberta_v3",
+          "context_mode": "sliding_window",
+          "max_length": 512
+        },
+        {
+          "backbone": "modernbert",
+          "context_mode": "long_context",
+          "max_length": 2048
+        }
+      ]
+    },
+    {
+      "ablation_id": "A5_head_architecture",
+      "research_question": "Independent 5-sigmoids vs Classifier Chain vs Label-Interaction Residual head.",
+      "conditions": [
+        "independent_sigmoid",
+        "classifier_chain",
+        "label_interaction"
+      ],
+      "backbone": "deberta_v3"
+    },
+    {
+      "ablation_id": "A6_imbalance_loss",
+      "research_question": "Unweighted BCE vs capped pos_weight BCE vs Asymmetric Focal Loss.",
+      "conditions": [
+        "bce",
+        "weighted_bce",
+        "asymmetric_focal"
+      ],
+      "backbone": "deberta_v3"
+    },
+    {
+      "ablation_id": "A7_context_shortcut_control",
+      "research_question": "Effect of context-unified non-CI controls on PubMedQA/CUAD CI false positives.",
+      "conditions": [
+        "naive_disjoint",
+        "context_unified"
+      ],
+      "backbone": "deberta_v3"
+    },
+    {
+      "ablation_id": "A8_cross_domain_leave_one_out",
+      "research_question": "Zero-shot cross-domain transfer across Medical, Legal, and Finance.",
+      "held_out_domains": [
+        "medical",
+        "legal",
+        "finance"
+      ],
+      "backbone": "deberta_v3"
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "source_split_pool": "train",
+  "unique_source_questions": 100,
+  "unique_group_ids": 100,
+  "paired_perturbed_base_count": 80,
+  "clean_control_count": 20,
+  "order_sensitivity_subset_count": 18,
+  "paired_by_dataset": {
+    "cuad_qa": 16,
+    "pubmedqa": 16,
+    "fiqa": 20,
+    "legal_qa_v1": 12,
+    "medquad": 16
+  },
+  "paired_by_domain": {
+    "legal": 28,
+    "medical": 32,
+    "finance": 20
+  },
+  "paired_by_context": {
+    "True": 32,
+    "False": 48
+  },
+  "paired_by_context_and_ci": {
+    "with_context_ci_1": 28,
+    "with_context_ci_0": 4,
+    "with_context_ci_0_by_tier": {
+      "G2": 2,
+      "G1": 2
+    },
+    "with_context_ci_0_items": [
+      {
+        "base_item_id": "PILOT_BASE_036",
+        "source_dataset": "cuad_qa",
+        "domain": "legal",
+        "cardinality_tier": "G2",
+        "intended_bits": "01010"
+      },
+      {
+        "base_item_id": "PILOT_BASE_051",
+        "source_dataset": "pubmedqa",
+        "domain": "medical",
+        "cardinality_tier": "G2",
+        "intended_bits": "11000"
+      },
+      {
+        "base_item_id": "PILOT_BASE_069",
+        "source_dataset": "pubmedqa",
+        "domain": "medical",
+        "cardinality_tier": "G1",
+        "intended_bits": "01000"
+      },
+      {
+        "base_item_id": "PILOT_BASE_074",
+        "source_dataset": "cuad_qa",
+        "domain": "legal",
+        "cardinality_tier": "G1",
+        "intended_bits": "10000"
+      }
+    ],
+    "no_context_ci_0": 48
+  },
+  "paired_by_tier": {
+    "G5": 2,
+    "G4": 5,
+    "G3": 18,
+    "G2": 30,
+    "G1": 25
+  },
+  "clean_by_dataset": {
+    "medquad": 4,
+    "pubmedqa": 4,
+    "legal_qa_v1": 3,
+    "cuad_qa": 4,
+    "fiqa": 5
+  },
+  "tier_by_domain_and_context": {
+    "G0": {
+      "base_items": 20,
+      "by_domain": {
+        "medical": 8,
+        "legal": 7,
+        "finance": 5
+      },
+      "by_context": {
+        "with_context": 8,
+        "no_context": 12
+      },
+      "by_dataset": {
+        "medquad": 4,
+        "pubmedqa": 4,
+        "legal_qa_v1": 3,
+        "cuad_qa": 4,
+        "fiqa": 5
+      }
+    },
+    "G1": {
+      "base_items": 25,
+      "by_domain": {
+        "medical": 9,
+        "legal": 8,
+        "finance": 8
+      },
+      "by_context": {
+        "with_context": 6,
+        "no_context": 19
+      },
+      "by_dataset": {
+        "cuad_qa": 3,
+        "pubmedqa": 3,
+        "legal_qa_v1": 5,
+        "fiqa": 8,
+        "medquad": 6
+      }
+    },
+    "G2": {
+      "base_items": 30,
+      "by_domain": {
+        "medical": 12,
+        "legal": 10,
+        "finance": 8
+      },
+      "by_context": {
+        "with_context": 12,
+        "no_context": 18
+      },
+      "by_dataset": {
+        "cuad_qa": 6,
+        "pubmedqa": 6,
+        "fiqa": 8,
+        "legal_qa_v1": 4,
+        "medquad": 6
+      }
+    },
+    "G3": {
+      "base_items": 18,
+      "by_domain": {
+        "medical": 9,
+        "legal": 6,
+        "finance": 3
+      },
+      "by_context": {
+        "with_context": 9,
+        "no_context": 9
+      },
+      "by_dataset": {
+        "pubmedqa": 5,
+        "cuad_qa": 4,
+        "medquad": 4,
+        "fiqa": 3,
+        "legal_qa_v1": 2
+      }
+    },
+    "G4": {
+      "base_items": 5,
+      "by_domain": {
+        "medical": 1,
+        "legal": 3,
+        "finance": 1
+      },
+      "by_context": {
+        "with_context": 3,
+        "no_context": 2
+      },
+      "by_dataset": {
+        "cuad_qa": 2,
+        "pubmedqa": 1,
+        "fiqa": 1,
+        "legal_qa_v1": 1
+      }
+    },
+    "G5": {
+      "base_items": 2,
+      "by_domain": {
+        "medical": 1,
+        "legal": 1,
+        "finance": 0
+      },
+      "by_context": {
+        "with_context": 2,
+        "no_context": 0
+      },
+      "by_dataset": {
+        "cuad_qa": 1,
+        "pubmedqa": 1
+      }
+    }
+  },
+  "order_sensitivity_subset_breakdown": {
+    "subset_items": 18,
+    "by_tier": {
+      "G3": 8,
+      "G2": 10
+    },
+    "by_domain": {
+      "medical": 6,
+      "legal": 8,
+      "finance": 4
+    },
+    "by_context": {
+      "with_context": 7,
+      "no_context": 11
+    },
+    "by_dataset": {
+      "pubmedqa": 3,
+      "cuad_qa": 4,
+      "medquad": 3,
+      "fiqa": 4,
+      "legal_qa_v1": 4
+    }
+  },
+  "budget_and_call_accounting": {
+    "core_pilot_budget": {
+      "unique_source_questions": 100,
+      "perturbed_strategy_slots": 240,
+      "clean_control_slots": 20,
+      "total_core_evaluation_items": 260,
+      "nominal_generator_calls": {
+        "strategy_a_forward_sequential_steps": 169,
+        "strategy_b_joint": 80,
+        "strategy_c_span_editing": 80,
+        "clean_control": 0,
+        "subtotal": 329
+      },
+      "nominal_cross_judge_calls": 260,
+      "total_core_nominal_llm_calls": 589
+    },
+    "order_sensitivity_addon": {
+      "is_additional_to_260": true,
+      "extra_unique_source_questions": 0,
+      "reused_subset_base_items": 18,
+      "additional_comparative_outputs": 36,
+      "nominal_generator_calls_reverse_plus_randomized": 88,
+      "nominal_cross_judge_calls": 36,
+      "total_addon_nominal_llm_calls": 124
+    },
+    "combined_pilot_totals_when_order_addon_enabled": {
+      "unique_source_questions": 100,
+      "total_perturbed_outputs_attempted": 276,
+      "clean_controls": 20,
+      "total_evaluation_items": 296,
+      "nominal_generator_calls": 417,
+      "worst_case_max_retry_generator_calls": 1251,
+      "nominal_cross_judge_calls": 296,
+      "total_nominal_llm_calls": 713
+    }
+  }
+}

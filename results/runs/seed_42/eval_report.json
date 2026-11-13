@@ -1,0 +1,2113 @@
+{
+  "evaluated_at_utc": "2026-11-13T09:30:31.520686+00:00",
+  "run_dir": "D:\\Major Project\\MultiLabel-Hallucination-Detection\\results\\runs\\seed_42",
+  "hf_model_id": "distilbert/distilbert-base-uncased",
+  "backbone_key": "distilbert",
+  "head_type": "independent_sigmoid",
+  "pooling": "masked_mean",
+  "context_mode": "budgeted_truncation",
+  "max_length": 512,
+  "device": "cpu",
+  "splits_evaluated": [
+    "test_synthetic"
+  ],
+  "evaluations": {
+    "test_synthetic": {
+      "split_tag": "test_synthetic",
+      "n_samples": 25,
+      "unique_source_groups": 25,
+      "metrics_raw_tau_050": {
+        "overall": {
+          "n_samples": 25,
+          "micro_precision": 0.875,
+          "micro_recall": 0.194444,
+          "micro_f1": 0.318182,
+          "macro_precision": 0.175,
+          "macro_recall": 0.2,
+          "macro_f1": 0.186667,
+          "weighted_precision": 0.170139,
+          "weighted_recall": 0.194444,
+          "weighted_f1": 0.181481,
+          "samples_precision": 0.28,
+          "samples_recall": 0.173333,
+          "samples_f1": 0.206667,
+          "hamming_loss": 0.24,
+          "subset_accuracy": 0.24,
+          "thresholds_used": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "mean_pr_auc": 0.525243,
+          "mean_roc_auc": 0.672691
+        },
+        "per_label": {
+          "factual_inconsistency": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 8,
+            "predicted_positives": 0,
+            "pr_auc": 0.30213,
+            "roc_auc": 0.338235,
+            "ece": 0.040306,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 2,
+                "empirical_pos_rate": 0.5,
+                "mean_predicted_prob": 0.295191
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 23,
+                "empirical_pos_rate": 0.304348,
+                "mean_predicted_prob": 0.330349
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.222475,
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 8,
+              "tn": 17
+            },
+            "threshold": 0.5
+          },
+          "factual_fabrication": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 9,
+            "predicted_positives": 0,
+            "pr_auc": 0.581674,
+            "roc_auc": 0.659722,
+            "ece": 0.128685,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 11,
+                "empirical_pos_rate": 0.181818,
+                "mean_predicted_prob": 0.377763
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 14,
+                "empirical_pos_rate": 0.5,
+                "mean_predicted_prob": 0.424161
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.225129,
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 9,
+              "tn": 16
+            },
+            "threshold": 0.5
+          },
+          "instruction_inconsistency": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6,
+            "predicted_positives": 0,
+            "pr_auc": 0.547354,
+            "roc_auc": 0.754386,
+            "ece": 0.090478,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 10,
+                "empirical_pos_rate": 0.1,
+                "mean_predicted_prob": 0.249777
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 8,
+                "empirical_pos_rate": 0.25,
+                "mean_predicted_prob": 0.344459
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 7,
+                "empirical_pos_rate": 0.428571,
+                "mean_predicted_prob": 0.429789
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.170746,
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 6,
+              "tn": 19
+            },
+            "threshold": 0.5
+          },
+          "logical_inconsistency": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6,
+            "predicted_positives": 0,
+            "pr_auc": 0.440463,
+            "roc_auc": 0.666667,
+            "ece": 0.195443,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 22,
+                "empirical_pos_rate": 0.181818,
+                "mean_predicted_prob": 0.370239
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 3,
+                "empirical_pos_rate": 0.666667,
+                "mean_predicted_prob": 0.419725
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.196717,
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 6,
+              "tn": 19
+            },
+            "threshold": 0.5
+          },
+          "context_inconsistency": {
+            "precision": 0.875,
+            "recall": 1.0,
+            "f1": 0.933333,
+            "support": 7,
+            "predicted_positives": 8,
+            "pr_auc": 0.754592,
+            "roc_auc": 0.944444,
+            "ece": 0.304374,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 9,
+                "empirical_pos_rate": 0.0,
+                "mean_predicted_prob": 0.253659
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 6,
+                "empirical_pos_rate": 0.0,
+                "mean_predicted_prob": 0.319476
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 2,
+                "empirical_pos_rate": 0.0,
+                "mean_predicted_prob": 0.497495
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 5,
+                "empirical_pos_rate": 1.0,
+                "mean_predicted_prob": 0.545286
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 3,
+                "empirical_pos_rate": 0.666667,
+                "mean_predicted_prob": 0.619664
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.136961,
+            "confusion_matrix": {
+              "tp": 7,
+              "fp": 1,
+              "fn": 0,
+              "tn": 17
+            },
+            "threshold": 0.5
+          }
+        },
+        "calibration": {
+          "mean_ece": 0.151857,
+          "mean_brier_score": 0.190406,
+          "per_label_ece": {
+            "factual_inconsistency": 0.040306,
+            "factual_fabrication": 0.128685,
+            "instruction_inconsistency": 0.090478,
+            "logical_inconsistency": 0.195443,
+            "context_inconsistency": 0.304374
+          },
+          "per_label_brier": {
+            "factual_inconsistency": 0.222475,
+            "factual_fabrication": 0.225129,
+            "instruction_inconsistency": 0.170746,
+            "logical_inconsistency": 0.196717,
+            "context_inconsistency": 0.136961
+          }
+        },
+        "task_b1_binary": {
+          "definition": "binary any_hallucination_present (sum(y)>0); max_k s_k for continuous score",
+          "positive_rate_true": 0.8,
+          "accuracy": 0.44,
+          "precision": 0.875,
+          "recall": 0.35,
+          "f1": 0.5,
+          "pr_auc": 0.82389,
+          "roc_auc": 0.65
+        },
+        "operational": {
+          "latency_ms_per_sample": 665.3997,
+          "context_truncated_pct": 20.0,
+          "response_truncated_pct": 0.0
+        }
+      },
+      "metrics_calibrated_tau_050": {
+        "overall": {
+          "n_samples": 25,
+          "micro_precision": 0.875,
+          "micro_recall": 0.194444,
+          "micro_f1": 0.318182,
+          "macro_precision": 0.175,
+          "macro_recall": 0.2,
+          "macro_f1": 0.186667,
+          "weighted_precision": 0.170139,
+          "weighted_recall": 0.194444,
+          "weighted_f1": 0.181481,
+          "samples_precision": 0.28,
+          "samples_recall": 0.173333,
+          "samples_f1": 0.206667,
+          "hamming_loss": 0.24,
+          "subset_accuracy": 0.24,
+          "thresholds_used": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "mean_pr_auc": 0.525243,
+          "mean_roc_auc": 0.672691
+        },
+        "per_label": {
+          "factual_inconsistency": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 8,
+            "predicted_positives": 0,
+            "pr_auc": 0.30213,
+            "roc_auc": 0.338235,
+            "ece": 0.015315,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 3,
+                "empirical_pos_rate": 0.333333,
+                "mean_predicted_prob": 0.29552
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 22,
+                "empirical_pos_rate": 0.318182,
+                "mean_predicted_prob": 0.330428
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.222489,
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 8,
+              "tn": 17
+            },
+            "threshold": 0.5
+          },
+          "factual_fabrication": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 9,
+            "predicted_positives": 0,
+            "pr_auc": 0.581674,
+            "roc_auc": 0.659722,
+            "ece": 0.048682,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 8,
+                "empirical_pos_rate": 0.25,
+                "mean_predicted_prob": 0.263886
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 14,
+                "empirical_pos_rate": 0.357143,
+                "mean_predicted_prob": 0.334556
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 3,
+                "empirical_pos_rate": 0.666667,
+                "mean_predicted_prob": 0.403422
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.220375,
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 9,
+              "tn": 16
+            },
+            "threshold": 0.5
+          },
+          "instruction_inconsistency": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6,
+            "predicted_positives": 0,
+            "pr_auc": 0.547354,
+            "roc_auc": 0.754386,
+            "ece": 0.042732,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 10,
+                "empirical_pos_rate": 0.1,
+                "mean_predicted_prob": 0.1318
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 8,
+                "empirical_pos_rate": 0.25,
+                "mean_predicted_prob": 0.249709
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 6,
+                "empirical_pos_rate": 0.333333,
+                "mean_predicted_prob": 0.368194
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 1,
+                "empirical_pos_rate": 1.0,
+                "mean_predicted_prob": 0.461202
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.157254,
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 6,
+              "tn": 19
+            },
+            "threshold": 0.5
+          },
+          "logical_inconsistency": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6,
+            "predicted_positives": 0,
+            "pr_auc": 0.440463,
+            "roc_auc": 0.666667,
+            "ece": 0.124765,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 11,
+                "empirical_pos_rate": 0.090909,
+                "mean_predicted_prob": 0.172377
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 13,
+                "empirical_pos_rate": 0.384615,
+                "mean_predicted_prob": 0.240203
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 1,
+                "empirical_pos_rate": 0.0,
+                "mean_predicted_prob": 0.345611
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.175988,
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 6,
+              "tn": 19
+            },
+            "threshold": 0.5
+          },
+          "context_inconsistency": {
+            "precision": 0.875,
+            "recall": 1.0,
+            "f1": 0.933333,
+            "support": 7,
+            "predicted_positives": 8,
+            "pr_auc": 0.754592,
+            "roc_auc": 0.944444,
+            "ece": 0.163135,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 14,
+                "empirical_pos_rate": 0.0,
+                "mean_predicted_prob": 0.046853
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 1,
+                "empirical_pos_rate": 0.0,
+                "mean_predicted_prob": 0.14266
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 2,
+                "empirical_pos_rate": 0.0,
+                "mean_predicted_prob": 0.492008
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 2,
+                "empirical_pos_rate": 1.0,
+                "mean_predicted_prob": 0.559974
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 2,
+                "empirical_pos_rate": 1.0,
+                "mean_predicted_prob": 0.639248
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 1,
+                "empirical_pos_rate": 1.0,
+                "mean_predicted_prob": 0.782821
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 3,
+                "empirical_pos_rate": 0.666667,
+                "mean_predicted_prob": 0.825671
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.080782,
+            "confusion_matrix": {
+              "tp": 7,
+              "fp": 1,
+              "fn": 0,
+              "tn": 17
+            },
+            "threshold": 0.5
+          }
+        },
+        "calibration": {
+          "mean_ece": 0.078926,
+          "mean_brier_score": 0.171378,
+          "per_label_ece": {
+            "factual_inconsistency": 0.015315,
+            "factual_fabrication": 0.048682,
+            "instruction_inconsistency": 0.042732,
+            "logical_inconsistency": 0.124765,
+            "context_inconsistency": 0.163135
+          },
+          "per_label_brier": {
+            "factual_inconsistency": 0.222489,
+            "factual_fabrication": 0.220375,
+            "instruction_inconsistency": 0.157254,
+            "logical_inconsistency": 0.175988,
+            "context_inconsistency": 0.080782
+          }
+        },
+        "task_b1_binary": {
+          "definition": "binary any_hallucination_present (sum(y)>0); max_k s_k for continuous score",
+          "positive_rate_true": 0.8,
+          "accuracy": 0.44,
+          "precision": 0.875,
+          "recall": 0.35,
+          "f1": 0.5,
+          "pr_auc": 0.806123,
+          "roc_auc": 0.56
+        },
+        "operational": {
+          "latency_ms_per_sample": 665.3997,
+          "context_truncated_pct": 20.0,
+          "response_truncated_pct": 0.0
+        }
+      },
+      "metrics_calibrated_val_tuned_tau": {
+        "overall": {
+          "n_samples": 25,
+          "micro_precision": 0.405797,
+          "micro_recall": 0.777778,
+          "micro_f1": 0.533333,
+          "macro_precision": 0.435382,
+          "macro_recall": 0.797222,
+          "macro_f1": 0.546928,
+          "weighted_precision": 0.436977,
+          "weighted_recall": 0.777778,
+          "weighted_f1": 0.541612,
+          "samples_precision": 0.383333,
+          "samples_recall": 0.64,
+          "samples_f1": 0.458667,
+          "hamming_loss": 0.392,
+          "subset_accuracy": 0.04,
+          "thresholds_used": [
+            0.3,
+            0.34,
+            0.21,
+            0.2,
+            0.4
+          ],
+          "mean_pr_auc": 0.525243,
+          "mean_roc_auc": 0.672691
+        },
+        "per_label": {
+          "factual_inconsistency": {
+            "precision": 0.318182,
+            "recall": 0.875,
+            "f1": 0.466667,
+            "support": 8,
+            "predicted_positives": 22,
+            "pr_auc": 0.30213,
+            "roc_auc": 0.338235,
+            "ece": 0.015315,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 3,
+                "empirical_pos_rate": 0.333333,
+                "mean_predicted_prob": 0.29552
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 22,
+                "empirical_pos_rate": 0.318182,
+                "mean_predicted_prob": 0.330428
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.222489,
+            "confusion_matrix": {
+              "tp": 7,
+              "fp": 15,
+              "fn": 1,
+              "tn": 2
+            },
+            "threshold": 0.3
+          },
+          "factual_fabrication": {
+            "precision": 0.444444,
+            "recall": 0.444444,
+            "f1": 0.444444,
+            "support": 9,
+            "predicted_positives": 9,
+            "pr_auc": 0.581674,
+            "roc_auc": 0.659722,
+            "ece": 0.048682,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 8,
+                "empirical_pos_rate": 0.25,
+                "mean_predicted_prob": 0.263886
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 14,
+                "empirical_pos_rate": 0.357143,
+                "mean_predicted_prob": 0.334556
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 3,
+                "empirical_pos_rate": 0.666667,
+                "mean_predicted_prob": 0.403422
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.220375,
+            "confusion_matrix": {
+              "tp": 4,
+              "fp": 5,
+              "fn": 5,
+              "tn": 11
+            },
+            "threshold": 0.34
+          },
+          "instruction_inconsistency": {
+            "precision": 0.357143,
+            "recall": 0.833333,
+            "f1": 0.5,
+            "support": 6,
+            "predicted_positives": 14,
+            "pr_auc": 0.547354,
+            "roc_auc": 0.754386,
+            "ece": 0.042732,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 10,
+                "empirical_pos_rate": 0.1,
+                "mean_predicted_prob": 0.1318
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 8,
+                "empirical_pos_rate": 0.25,
+                "mean_predicted_prob": 0.249709
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 6,
+                "empirical_pos_rate": 0.333333,
+                "mean_predicted_prob": 0.368194
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 1,
+                "empirical_pos_rate": 1.0,
+                "mean_predicted_prob": 0.461202
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.157254,
+            "confusion_matrix": {
+              "tp": 5,
+              "fp": 9,
+              "fn": 1,
+              "tn": 10
+            },
+            "threshold": 0.21
+          },
+          "logical_inconsistency": {
+            "precision": 0.357143,
+            "recall": 0.833333,
+            "f1": 0.5,
+            "support": 6,
+            "predicted_positives": 14,
+            "pr_auc": 0.440463,
+            "roc_auc": 0.666667,
+            "ece": 0.124765,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 11,
+                "empirical_pos_rate": 0.090909,
+                "mean_predicted_prob": 0.172377
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 13,
+                "empirical_pos_rate": 0.384615,
+                "mean_predicted_prob": 0.240203
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 1,
+                "empirical_pos_rate": 0.0,
+                "mean_predicted_prob": 0.345611
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.175988,
+            "confusion_matrix": {
+              "tp": 5,
+              "fp": 9,
+              "fn": 1,
+              "tn": 10
+            },
+            "threshold": 0.2
+          },
+          "context_inconsistency": {
+            "precision": 0.7,
+            "recall": 1.0,
+            "f1": 0.823529,
+            "support": 7,
+            "predicted_positives": 10,
+            "pr_auc": 0.754592,
+            "roc_auc": 0.944444,
+            "ece": 0.163135,
+            "ece_bins": [
+              {
+                "bin_lower": 0.0,
+                "bin_upper": 0.1,
+                "count": 14,
+                "empirical_pos_rate": 0.0,
+                "mean_predicted_prob": 0.046853
+              },
+              {
+                "bin_lower": 0.1,
+                "bin_upper": 0.2,
+                "count": 1,
+                "empirical_pos_rate": 0.0,
+                "mean_predicted_prob": 0.14266
+              },
+              {
+                "bin_lower": 0.2,
+                "bin_upper": 0.3,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.3,
+                "bin_upper": 0.4,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              },
+              {
+                "bin_lower": 0.4,
+                "bin_upper": 0.5,
+                "count": 2,
+                "empirical_pos_rate": 0.0,
+                "mean_predicted_prob": 0.492008
+              },
+              {
+                "bin_lower": 0.5,
+                "bin_upper": 0.6,
+                "count": 2,
+                "empirical_pos_rate": 1.0,
+                "mean_predicted_prob": 0.559974
+              },
+              {
+                "bin_lower": 0.6,
+                "bin_upper": 0.7,
+                "count": 2,
+                "empirical_pos_rate": 1.0,
+                "mean_predicted_prob": 0.639248
+              },
+              {
+                "bin_lower": 0.7,
+                "bin_upper": 0.8,
+                "count": 1,
+                "empirical_pos_rate": 1.0,
+                "mean_predicted_prob": 0.782821
+              },
+              {
+                "bin_lower": 0.8,
+                "bin_upper": 0.9,
+                "count": 3,
+                "empirical_pos_rate": 0.666667,
+                "mean_predicted_prob": 0.825671
+              },
+              {
+                "bin_lower": 0.9,
+                "bin_upper": 1.0,
+                "count": 0,
+                "empirical_pos_rate": null,
+                "mean_predicted_prob": null
+              }
+            ],
+            "brier_score": 0.080782,
+            "confusion_matrix": {
+              "tp": 7,
+              "fp": 3,
+              "fn": 0,
+              "tn": 15
+            },
+            "threshold": 0.4
+          }
+        },
+        "calibration": {
+          "mean_ece": 0.078926,
+          "mean_brier_score": 0.171378,
+          "per_label_ece": {
+            "factual_inconsistency": 0.015315,
+            "factual_fabrication": 0.048682,
+            "instruction_inconsistency": 0.042732,
+            "logical_inconsistency": 0.124765,
+            "context_inconsistency": 0.163135
+          },
+          "per_label_brier": {
+            "factual_inconsistency": 0.222489,
+            "factual_fabrication": 0.220375,
+            "instruction_inconsistency": 0.157254,
+            "logical_inconsistency": 0.175988,
+            "context_inconsistency": 0.080782
+          }
+        },
+        "task_b1_binary": {
+          "definition": "binary any_hallucination_present (sum(y)>0); max_k s_k for continuous score",
+          "positive_rate_true": 0.8,
+          "accuracy": 0.8,
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.888889,
+          "pr_auc": 0.806123,
+          "roc_auc": 0.56
+        },
+        "operational": {
+          "latency_ms_per_sample": 665.3997,
+          "context_truncated_pct": 20.0,
+          "response_truncated_pct": 0.0
+        }
+      },
+      "e4_sliced_metrics": {
+        "by_domain": {
+          "finance": {
+            "n_samples": 6,
+            "macro_f1": 0.340476,
+            "micro_f1": 0.518519,
+            "hamming_loss": 0.433333,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.219152,
+            "mean_brier_score": 0.194842,
+            "task_b1_f1": 0.909091,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "legal": {
+            "n_samples": 9,
+            "macro_f1": 0.614444,
+            "micro_f1": 0.611111,
+            "hamming_loss": 0.311111,
+            "subset_accuracy": 0.111111,
+            "mean_ece": 0.133467,
+            "mean_brier_score": 0.172793,
+            "task_b1_f1": 0.875,
+            "context_inconsistency_fp_rate_on_zero": 0.2
+          },
+          "medical": {
+            "n_samples": 10,
+            "macro_f1": 0.500649,
+            "micro_f1": 0.47619,
+            "hamming_loss": 0.44,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.198041,
+            "mean_brier_score": 0.156025,
+            "task_b1_f1": 0.888889,
+            "context_inconsistency_fp_rate_on_zero": 0.285714
+          }
+        },
+        "by_dataset": {
+          "cuad_qa": {
+            "n_samples": 5,
+            "macro_f1": 0.477778,
+            "micro_f1": 0.6,
+            "hamming_loss": 0.32,
+            "subset_accuracy": 0.2,
+            "mean_ece": 0.143547,
+            "mean_brier_score": 0.162917,
+            "task_b1_f1": 0.888889,
+            "context_inconsistency_fp_rate_on_zero": 1.0
+          },
+          "fiqa": {
+            "n_samples": 6,
+            "macro_f1": 0.340476,
+            "micro_f1": 0.518519,
+            "hamming_loss": 0.433333,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.219152,
+            "mean_brier_score": 0.194842,
+            "task_b1_f1": 0.909091,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "legal_qa_v1": {
+            "n_samples": 4,
+            "macro_f1": 0.393333,
+            "micro_f1": 0.625,
+            "hamming_loss": 0.3,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.194354,
+            "mean_brier_score": 0.185138,
+            "task_b1_f1": 0.857143,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "medquad": {
+            "n_samples": 5,
+            "macro_f1": 0.447619,
+            "micro_f1": 0.545455,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.213799,
+            "mean_brier_score": 0.162221,
+            "task_b1_f1": 0.888889,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "pubmedqa": {
+            "n_samples": 5,
+            "macro_f1": 0.216667,
+            "micro_f1": 0.4,
+            "hamming_loss": 0.48,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.203491,
+            "mean_brier_score": 0.149829,
+            "task_b1_f1": 0.888889,
+            "context_inconsistency_fp_rate_on_zero": 1.0
+          }
+        },
+        "by_context_regime": {
+          "no_context": {
+            "n_samples": 15,
+            "macro_f1": 0.432882,
+            "micro_f1": 0.553846,
+            "hamming_loss": 0.386667,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.107869,
+            "mean_brier_score": 0.181381,
+            "task_b1_f1": 0.888889,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "with_context": {
+            "n_samples": 10,
+            "macro_f1": 0.30915,
+            "micro_f1": 0.5,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.1,
+            "mean_ece": 0.135896,
+            "mean_brier_score": 0.156373,
+            "task_b1_f1": 0.888889,
+            "context_inconsistency_fp_rate_on_zero": 1.0
+          }
+        },
+        "by_cardinality": {
+          "G0": {
+            "n_samples": 5,
+            "macro_f1": 0.0,
+            "micro_f1": 0.0,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.269744,
+            "mean_brier_score": 0.097292,
+            "task_b1_f1": 0.0,
+            "context_inconsistency_fp_rate_on_zero": 0.4
+          },
+          "G1": {
+            "n_samples": 7,
+            "macro_f1": 0.45,
+            "micro_f1": 0.428571,
+            "hamming_loss": 0.457143,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.172648,
+            "mean_brier_score": 0.12855,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.2
+          },
+          "G2": {
+            "n_samples": 10,
+            "macro_f1": 0.663077,
+            "micro_f1": 0.653061,
+            "hamming_loss": 0.34,
+            "subset_accuracy": 0.1,
+            "mean_ece": 0.157724,
+            "mean_brier_score": 0.201299,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "G3": {
+            "n_samples": 3,
+            "macro_f1": 0.693333,
+            "micro_f1": 0.666667,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.444265,
+            "mean_brier_score": 0.295047,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          }
+        },
+        "by_combination_bits": {
+          "00000": {
+            "n_samples": 5,
+            "macro_f1": 0.0,
+            "micro_f1": 0.0,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.269744,
+            "mean_brier_score": 0.097292,
+            "task_b1_f1": 0.0,
+            "context_inconsistency_fp_rate_on_zero": 0.4
+          },
+          "00001": {
+            "n_samples": 2,
+            "macro_f1": 0.2,
+            "micro_f1": 0.5,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.254624,
+            "mean_brier_score": 0.07401,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "00010": {
+            "n_samples": 1,
+            "macro_f1": 0.2,
+            "micro_f1": 0.4,
+            "hamming_loss": 0.6,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.361956,
+            "mean_brier_score": 0.186037,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "00011": {
+            "n_samples": 1,
+            "macro_f1": 0.2,
+            "micro_f1": 0.4,
+            "hamming_loss": 0.6,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.436238,
+            "mean_brier_score": 0.24557,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "00100": {
+            "n_samples": 1,
+            "macro_f1": 0.2,
+            "micro_f1": 0.5,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.307212,
+            "mean_brier_score": 0.144448,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "00101": {
+            "n_samples": 1,
+            "macro_f1": 0.2,
+            "micro_f1": 0.5,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.384179,
+            "mean_brier_score": 0.207482,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "00110": {
+            "n_samples": 1,
+            "macro_f1": 0.4,
+            "micro_f1": 0.666667,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.429091,
+            "mean_brier_score": 0.247351,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "01000": {
+            "n_samples": 2,
+            "macro_f1": 0.133333,
+            "micro_f1": 0.285714,
+            "hamming_loss": 0.5,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.321375,
+            "mean_brier_score": 0.14034,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.5
+          },
+          "01001": {
+            "n_samples": 1,
+            "macro_f1": 0.4,
+            "micro_f1": 0.8,
+            "hamming_loss": 0.2,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.318874,
+            "mean_brier_score": 0.129359,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "01010": {
+            "n_samples": 1,
+            "macro_f1": 0.2,
+            "micro_f1": 0.4,
+            "hamming_loss": 0.6,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.444983,
+            "mean_brier_score": 0.269749,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "01100": {
+            "n_samples": 1,
+            "macro_f1": 0.2,
+            "micro_f1": 0.4,
+            "hamming_loss": 0.6,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.385702,
+            "mean_brier_score": 0.210357,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "10000": {
+            "n_samples": 1,
+            "macro_f1": 0.2,
+            "micro_f1": 0.5,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.306075,
+            "mean_brier_score": 0.140669,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "10001": {
+            "n_samples": 1,
+            "macro_f1": 0.4,
+            "micro_f1": 1.0,
+            "hamming_loss": 0.0,
+            "subset_accuracy": 1.0,
+            "mean_ece": 0.301795,
+            "mean_brier_score": 0.132533,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "10010": {
+            "n_samples": 1,
+            "macro_f1": 0.4,
+            "micro_f1": 0.8,
+            "hamming_loss": 0.2,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.405306,
+            "mean_brier_score": 0.225944,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "10100": {
+            "n_samples": 1,
+            "macro_f1": 0.4,
+            "micro_f1": 0.8,
+            "hamming_loss": 0.2,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.338764,
+            "mean_brier_score": 0.1675,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "11000": {
+            "n_samples": 1,
+            "macro_f1": 0.4,
+            "micro_f1": 0.8,
+            "hamming_loss": 0.2,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.350955,
+            "mean_brier_score": 0.177142,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "11001": {
+            "n_samples": 1,
+            "macro_f1": 0.4,
+            "micro_f1": 0.666667,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.419464,
+            "mean_brier_score": 0.227006,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "11010": {
+            "n_samples": 1,
+            "macro_f1": 0.4,
+            "micro_f1": 0.666667,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.522256,
+            "mean_brier_score": 0.349044,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "11100": {
+            "n_samples": 1,
+            "macro_f1": 0.4,
+            "micro_f1": 0.666667,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.489872,
+            "mean_brier_score": 0.309092,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          }
+        },
+        "by_cooccurring_pair": {
+          "FF+CI": {
+            "n_samples": 2,
+            "macro_f1": 0.4,
+            "micro_f1": 0.727273,
+            "hamming_loss": 0.3,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.369169,
+            "mean_brier_score": 0.178182,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "FF+II": {
+            "n_samples": 2,
+            "macro_f1": 0.333333,
+            "micro_f1": 0.545455,
+            "hamming_loss": 0.5,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.370584,
+            "mean_brier_score": 0.259725,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "FF+LI": {
+            "n_samples": 2,
+            "macro_f1": 0.333333,
+            "micro_f1": 0.545455,
+            "hamming_loss": 0.5,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.416577,
+            "mean_brier_score": 0.309396,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "FI+CI": {
+            "n_samples": 2,
+            "macro_f1": 0.533333,
+            "micro_f1": 0.8,
+            "hamming_loss": 0.2,
+            "subset_accuracy": 0.5,
+            "mean_ece": 0.297022,
+            "mean_brier_score": 0.179769,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "FI+FF": {
+            "n_samples": 4,
+            "macro_f1": 0.704762,
+            "micro_f1": 0.695652,
+            "hamming_loss": 0.35,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.397229,
+            "mean_brier_score": 0.265571,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "FI+II": {
+            "n_samples": 2,
+            "macro_f1": 0.4,
+            "micro_f1": 0.727273,
+            "hamming_loss": 0.3,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.414318,
+            "mean_brier_score": 0.238296,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "FI+LI": {
+            "n_samples": 2,
+            "macro_f1": 0.4,
+            "micro_f1": 0.727273,
+            "hamming_loss": 0.3,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.463781,
+            "mean_brier_score": 0.287494,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "II+CI": {
+            "n_samples": 1,
+            "macro_f1": 0.2,
+            "micro_f1": 0.5,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.384179,
+            "mean_brier_score": 0.207482,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "II+LI": {
+            "n_samples": 1,
+            "macro_f1": 0.4,
+            "micro_f1": 0.666667,
+            "hamming_loss": 0.4,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.429091,
+            "mean_brier_score": 0.247351,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          },
+          "LI+CI": {
+            "n_samples": 1,
+            "macro_f1": 0.2,
+            "micro_f1": 0.4,
+            "hamming_loss": 0.6,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.436238,
+            "mean_brier_score": 0.24557,
+            "task_b1_f1": 1.0,
+            "context_inconsistency_fp_rate_on_zero": 0.0
+          }
+        },
+        "by_truncation": {
+          "context_intact": {
+            "n_samples": 20,
+            "macro_f1": 0.547571,
+            "micro_f1": 0.517647,
+            "hamming_loss": 0.41,
+            "subset_accuracy": 0.0,
+            "mean_ece": 0.105452,
+            "mean_brier_score": 0.173493,
+            "task_b1_f1": 0.888889,
+            "context_inconsistency_fp_rate_on_zero": 0.117647
+          },
+          "context_truncated": {
+            "n_samples": 5,
+            "macro_f1": 0.477778,
+            "micro_f1": 0.6,
+            "hamming_loss": 0.32,
+            "subset_accuracy": 0.2,
+            "mean_ece": 0.143547,
+            "mean_brier_score": 0.162917,
+            "task_b1_f1": 0.888889,
+            "context_inconsistency_fp_rate_on_zero": 1.0
+          }
+        }
+      },
+      "bootstrap_95ci": {
+        "macro_f1": {
+          "mean": 0.535087,
+          "std": 0.051246,
+          "ci95_low": 0.42518,
+          "ci95_high": 0.630945
+        },
+        "micro_f1": {
+          "mean": 0.530984,
+          "std": 0.046844,
+          "ci95_low": 0.431818,
+          "ci95_high": 0.615385
+        },
+        "hamming_loss": {
+          "mean": 0.39232,
+          "std": 0.03074,
+          "ci95_low": 0.336,
+          "ci95_high": 0.448
+        },
+        "subset_accuracy": {
+          "mean": 0.03976,
+          "std": 0.039939,
+          "ci95_low": 0.0,
+          "ci95_high": 0.12
+        },
+        "mean_ece": {
+          "mean": 0.136129,
+          "std": 0.024026,
+          "ci95_low": 0.094599,
+          "ci95_high": 0.188035
+        },
+        "mean_brier_score": {
+          "mean": 0.171154,
+          "std": 0.015656,
+          "ci95_low": 0.139796,
+          "ci95_high": 0.200922
+        }
+      },
+      "raw_logits_preview_shape": [
+        25,
+        5
+      ]
+    }
+  }
+}

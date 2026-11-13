@@ -1,0 +1,275 @@
+{
+  "verification_timestamp_utc": "2026-11-12T02:55:31.005636+00:00",
+  "overall_status": "failed",
+  "api_keys_redacted": true,
+  "successful_checks": [
+    "cross_judge_independence",
+    "gemini_models_availability"
+  ],
+  "failed_checks": [
+    "gemini_structured_json_generation",
+    "openai_models_availability",
+    "openai_structured_json_audit",
+    "budget_guard_over_cap_boundary"
+  ],
+  "provider_errors": {
+    "synthetic_generator": {
+      "provider": "google_gemini",
+      "model_id": "gemini-3.8-flash",
+      "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:streamGenerateContent",
+      "status_code": 503,
+      "attempts": 3,
+      "retryable": true,
+      "error_message": "google_gemini/gemini-3.8-flash HTTP 503 (exhausted retries after 3 attempt(s)): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "error_details": {
+        "code": "503",
+        "status": "UNAVAILABLE",
+        "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+      },
+      "rate_limit_headers": {},
+      "latency_ms": 74584.67,
+      "error_type": "BackendHTTPRequestError",
+      "failure_category": "provider_api_error"
+    },
+    "cross_judge_auditor": {
+      "error_type": "BackendNotConfiguredError",
+      "failure_category": "configuration_error",
+      "status_code": null,
+      "retryable": false,
+      "error_message": "cross_judge_auditor credentials/endpoint not configured: set 'GROQ_API_KEY' in environment or .env before live execution."
+    }
+  },
+  "validation_errors": {},
+  "cross_judge_independence": {
+    "distinct_model_id": true,
+    "distinct_model_family": true,
+    "distinct_vendor_lineage": true,
+    "distinct_provider": true,
+    "diagnostic_only_never_gold": true,
+    "independence_verified": true
+  },
+  "retry_policy": {
+    "transient_http_status_codes": [
+      429,
+      500,
+      502,
+      503,
+      504
+    ],
+    "synthetic_generator": {
+      "max_retries": 2,
+      "retry_base_delay_sec": 1.0,
+      "retry_max_delay_sec": 8.0
+    },
+    "cross_judge_auditor": {
+      "max_retries": 2,
+      "retry_base_delay_sec": 1.0,
+      "retry_max_delay_sec": 8.0
+    }
+  },
+  "synthetic_generator": {
+    "passed": false,
+    "configured_model_id": "gemini-3.8-flash",
+    "provider": "google_gemini",
+    "api_base_resolved": "https://generativelanguage.googleapis.com/v1beta",
+    "api_key_env_used": "GEMINI_API_KEY",
+    "models_check": {
+      "passed": true,
+      "advertised_models_count": 63,
+      "latency_ms": 1345.79,
+      "attempts": 2,
+      "rate_limit_headers": {}
+    },
+    "generation_check": {
+      "passed": false,
+      "error": {
+        "provider": "google_gemini",
+        "model_id": "gemini-3.8-flash",
+        "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:streamGenerateContent",
+        "status_code": 503,
+        "attempts": 3,
+        "retryable": true,
+        "error_message": "google_gemini/gemini-3.8-flash HTTP 503 (exhausted retries after 3 attempt(s)): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+        "error_details": {
+          "code": "503",
+          "status": "UNAVAILABLE",
+          "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+        },
+        "rate_limit_headers": {},
+        "latency_ms": 74584.67,
+        "error_type": "BackendHTTPRequestError",
+        "failure_category": "provider_api_error"
+      }
+    },
+    "stage1_validation": {
+      "passed": false
+    },
+    "generation_attempt_record_validated": false,
+    "strategy_b_json_schema_validated": false,
+    "input_tokens": 0,
+    "output_tokens_billed": 0,
+    "thoughts_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 0.0,
+    "total_latency_ms": 75936.51,
+    "models_endpoint_rate_headers": {},
+    "response_rate_limit_headers": {},
+    "error": {
+      "provider": "google_gemini",
+      "model_id": "gemini-3.8-flash",
+      "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:streamGenerateContent",
+      "status_code": 503,
+      "attempts": 3,
+      "retryable": true,
+      "error_message": "google_gemini/gemini-3.8-flash HTTP 503 (exhausted retries after 3 attempt(s)): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "error_details": {
+        "code": "503",
+        "status": "UNAVAILABLE",
+        "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+      },
+      "rate_limit_headers": {},
+      "latency_ms": 74584.67,
+      "error_type": "BackendHTTPRequestError",
+      "failure_category": "provider_api_error"
+    },
+    "advertised_models_count": 63,
+    "matched_model_metadata": {
+      "name": "models/gemini-3.8-flash",
+      "version": "3.0",
+      "displayName": "Gemini 3.8 Flash",
+      "description": "Gemini 3.8 Flash",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 65536,
+      "supportedGenerationMethods": [
+        "generateContent",
+        "countTokens",
+        "createCachedContent",
+        "batchGenerateContent"
+      ],
+      "temperature": 1,
+      "topP": 0.95,
+      "topK": 64,
+      "maxTemperature": 2,
+      "thinking": true
+    },
+    "sample_request_payload_keys": [
+      "maxOutputTokens",
+      "responseMimeType",
+      "seed",
+      "thinkingConfig"
+    ],
+    "failure_category": "provider_api_error",
+    "provider_error": {
+      "provider": "google_gemini",
+      "model_id": "gemini-3.8-flash",
+      "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:streamGenerateContent",
+      "status_code": 503,
+      "attempts": 3,
+      "retryable": true,
+      "error_message": "google_gemini/gemini-3.8-flash HTTP 503 (exhausted retries after 3 attempt(s)): This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "error_details": {
+        "code": "503",
+        "status": "UNAVAILABLE",
+        "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+      },
+      "rate_limit_headers": {},
+      "latency_ms": 74584.67,
+      "error_type": "BackendHTTPRequestError",
+      "failure_category": "provider_api_error"
+    }
+  },
+  "cross_judge_auditor": {
+    "passed": false,
+    "configured_model_id": "openai/gpt-oss-120b",
+    "provider": "groq",
+    "api_base_resolved": "https://api.groq.com/openai/v1",
+    "api_key_env_used": "GROQ_API_KEY",
+    "audit_input_source": "controlled_audit_fixture",
+    "used_controlled_fixture": true,
+    "controlled_fixture": {
+      "fixture_id": "CONTROLLED_AUDIT_FIXTURE_ANAPHYLAXIS_FI_001",
+      "is_controlled_fixture": true,
+      "is_research_generated_sample": false,
+      "intended_bits": "10000",
+      "fixture_description": "Fixed controlled audit fixture asserting factual_inconsistency=1 (replaces IM epinephrine with oral aspirin / COX-2 inhibition) used solely for independent cross-judge smoke verification when Gemini generation is unavailable; NOT a generated research sample."
+    },
+    "models_check": {
+      "passed": false
+    },
+    "audit_check": {
+      "passed": false,
+      "error": {
+        "error_type": "BackendNotConfiguredError",
+        "failure_category": "configuration_error",
+        "status_code": null,
+        "retryable": false,
+        "error_message": "cross_judge_auditor credentials/endpoint not configured: set 'GROQ_API_KEY' in environment or .env before live execution."
+      }
+    },
+    "cross_judge_json_schema_validated": false,
+    "auto_detection_tier_validated": false,
+    "multilabel_record_validated": false,
+    "multilabel_validation_status": null,
+    "predicted_labels_vector": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 0.0,
+    "total_latency_ms": 0.79,
+    "models_endpoint_rate_headers": {},
+    "response_rate_limit_headers": {},
+    "error": {
+      "error_type": "BackendNotConfiguredError",
+      "failure_category": "configuration_error",
+      "status_code": null,
+      "retryable": false,
+      "error_message": "cross_judge_auditor credentials/endpoint not configured: set 'GROQ_API_KEY' in environment or .env before live execution."
+    },
+    "failure_category": "configuration_error",
+    "provider_error": {
+      "error_type": "BackendNotConfiguredError",
+      "failure_category": "configuration_error",
+      "status_code": null,
+      "retryable": false,
+      "error_message": "cross_judge_auditor credentials/endpoint not configured: set 'GROQ_API_KEY' in environment or .env before live execution."
+    }
+  },
+  "canonical_schema_validation": {
+    "source_qa_record_validated": true,
+    "strategy_b_json_schema_validated": false,
+    "generation_attempt_record_validated": false,
+    "cross_judge_json_schema_validated": false,
+    "auto_detection_tier_validated": false,
+    "multilabel_record_validated": false,
+    "multilabel_validation_status": null,
+    "predicted_labels_vector": null
+  },
+  "budget_guard_verification": {
+    "passed": false,
+    "max_pilot_budget_usd": 10.0,
+    "enforce_strict_budget_stop": true,
+    "live_smoke_spend_usd": 0.0,
+    "live_smoke_remaining_budget_usd": 10.0,
+    "boundary_over_cap_halted_safely": false,
+    "boundary_blocked_calls_prevented": 0,
+    "boundary_request_rejected_before_api_call": false,
+    "boundary_halt_reason": null
+  },
+  "timings_ms": {
+    "total_probe_ms": 75958.09,
+    "gemini_total_ms": 75936.51,
+    "openai_total_ms": 0.79
+  },
+  "rate_limit_summary": {
+    "synthetic_generator": {
+      "models_endpoint": {},
+      "inference_endpoint": {}
+    },
+    "cross_judge_auditor": {
+      "models_endpoint": {},
+      "inference_endpoint": {}
+    }
+  },
+  "total_smoke_cost_usd": 0.0
+}

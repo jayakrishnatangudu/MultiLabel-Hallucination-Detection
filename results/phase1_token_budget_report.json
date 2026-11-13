@@ -1,0 +1,310 @@
+{
+  "generated_at_utc": "2026-11-12T02:57:57.388015+00:00",
+  "tokenizer": "FallbackWhitespaceTokenizer",
+  "max_lengths": [
+    512,
+    2048
+  ],
+  "splits": {
+    "val": {
+      "source_path": "D:\\Major Project\\MultiLabel-Hallucination-Detection\\data\\splits\\source_val.jsonl",
+      "record_count": 9886,
+      "max_lengths": {
+        "512": {
+          "overall": {
+            "count": 9886,
+            "question_truncated_rate": 0.004957,
+            "response_truncated_rate": 0.023872,
+            "context_truncated_rate": 0.127048,
+            "mean_sequence_tokens": 323.83
+          },
+          "by_source_dataset": {
+            "cuad_qa": {
+              "count": 1011,
+              "question_truncated_rate": 0.039565,
+              "response_truncated_rate": 0.000989,
+              "context_truncated_rate": 0.995054,
+              "mean_sequence_tokens": 508.76
+            },
+            "fiqa": {
+              "count": 645,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.100775,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 239.07
+            },
+            "legal_qa_v1": {
+              "count": 372,
+              "question_truncated_rate": 0.024194,
+              "response_truncated_rate": 0.11828,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 298.9
+            },
+            "medquad": {
+              "count": 1638,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.076923,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 216.78
+            },
+            "pubmedqa": {
+              "count": 6220,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.040193,
+              "mean_sequence_tokens": 332.25
+            }
+          },
+          "sliding_window_mean_chunks": 2.5436,
+          "sliding_window_multi_chunk_rate": 0.126947
+        },
+        "2048": {
+          "overall": {
+            "count": 9886,
+            "question_truncated_rate": 0.003844,
+            "response_truncated_rate": 0.0,
+            "context_truncated_rate": 0.099939,
+            "mean_sequence_tokens": 487.3
+          },
+          "by_source_dataset": {
+            "cuad_qa": {
+              "count": 1011,
+              "question_truncated_rate": 0.037587,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.97725,
+              "mean_sequence_tokens": 2026.53
+            },
+            "fiqa": {
+              "count": 645,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 262.8
+            },
+            "legal_qa_v1": {
+              "count": 372,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 338.44
+            },
+            "medquad": {
+              "count": 1638,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 235.62
+            },
+            "pubmedqa": {
+              "count": 6220,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 335.57
+            }
+          }
+        }
+      }
+    },
+    "test_synthetic_pool": {
+      "source_path": "D:\\Major Project\\MultiLabel-Hallucination-Detection\\data\\splits\\source_test_synthetic_pool.jsonl",
+      "record_count": 7922,
+      "max_lengths": {
+        "512": {
+          "overall": {
+            "count": 7922,
+            "question_truncated_rate": 0.004671,
+            "response_truncated_rate": 0.020449,
+            "context_truncated_rate": 0.129513,
+            "mean_sequence_tokens": 324.15
+          },
+          "by_source_dataset": {
+            "cuad_qa": {
+              "count": 862,
+              "question_truncated_rate": 0.037123,
+              "response_truncated_rate": 0.00464,
+              "context_truncated_rate": 0.99652,
+              "mean_sequence_tokens": 509.62
+            },
+            "fiqa": {
+              "count": 517,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.092843,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 240.65
+            },
+            "legal_qa_v1": {
+              "count": 298,
+              "question_truncated_rate": 0.016779,
+              "response_truncated_rate": 0.073826,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 292.52
+            },
+            "medquad": {
+              "count": 1260,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.069841,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 212.17
+            },
+            "pubmedqa": {
+              "count": 4985,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.033501,
+              "mean_sequence_tokens": 330.94
+            }
+          },
+          "sliding_window_mean_chunks": 2.6077,
+          "sliding_window_multi_chunk_rate": 0.128882
+        },
+        "2048": {
+          "overall": {
+            "count": 7922,
+            "question_truncated_rate": 0.003156,
+            "response_truncated_rate": 0.0,
+            "context_truncated_rate": 0.104393,
+            "mean_sequence_tokens": 494.4
+          },
+          "by_source_dataset": {
+            "cuad_qa": {
+              "count": 862,
+              "question_truncated_rate": 0.029002,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.959397,
+              "mean_sequence_tokens": 2013.2
+            },
+            "fiqa": {
+              "count": 517,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 259.02
+            },
+            "legal_qa_v1": {
+              "count": 298,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 318.11
+            },
+            "medquad": {
+              "count": 1260,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 229.75
+            },
+            "pubmedqa": {
+              "count": 4985,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 333.61
+            }
+          }
+        }
+      }
+    },
+    "test_natural_pool": {
+      "source_path": "D:\\Major Project\\MultiLabel-Hallucination-Detection\\data\\splits\\source_test_natural_pool.jsonl",
+      "record_count": 2025,
+      "max_lengths": {
+        "512": {
+          "overall": {
+            "count": 2025,
+            "question_truncated_rate": 0.004938,
+            "response_truncated_rate": 0.019753,
+            "context_truncated_rate": 0.149136,
+            "mean_sequence_tokens": 329.76
+          },
+          "by_source_dataset": {
+            "cuad_qa": {
+              "count": 253,
+              "question_truncated_rate": 0.023715,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 1.0,
+              "mean_sequence_tokens": 510.0
+            },
+            "fiqa": {
+              "count": 129,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.077519,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 248.88
+            },
+            "legal_qa_v1": {
+              "count": 74,
+              "question_truncated_rate": 0.054054,
+              "response_truncated_rate": 0.108108,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 316.36
+            },
+            "medquad": {
+              "count": 325,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.067692,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 208.67
+            },
+            "pubmedqa": {
+              "count": 1244,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.039389,
+              "mean_sequence_tokens": 333.92
+            }
+          },
+          "sliding_window_mean_chunks": 2.9067,
+          "sliding_window_multi_chunk_rate": 0.149136
+        },
+        "2048": {
+          "overall": {
+            "count": 2025,
+            "question_truncated_rate": 0.002963,
+            "response_truncated_rate": 0.0,
+            "context_truncated_rate": 0.124938,
+            "mean_sequence_tokens": 528.59
+          },
+          "by_source_dataset": {
+            "cuad_qa": {
+              "count": 253,
+              "question_truncated_rate": 0.023715,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 1.0,
+              "mean_sequence_tokens": 2046.0
+            },
+            "fiqa": {
+              "count": 129,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 265.58
+            },
+            "legal_qa_v1": {
+              "count": 74,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 339.03
+            },
+            "medquad": {
+              "count": 325,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 226.96
+            },
+            "pubmedqa": {
+              "count": 1244,
+              "question_truncated_rate": 0.0,
+              "response_truncated_rate": 0.0,
+              "context_truncated_rate": 0.0,
+              "mean_sequence_tokens": 337.33
+            }
+          }
+        }
+      }
+    }
+  }
+}

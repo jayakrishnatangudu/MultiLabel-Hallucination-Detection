@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{llcrrrrrrrrrrrr}
+\toprule
+Model / Run & Split & Seeds & Macro-F1 & Micro-F1 & Subset Acc & Hamming Loss & Mean PR-AUC & Mean ECE & Mean Brier & FI F1 & FF F1 & II F1 & LI F1 & CI F1 \\
+\midrule
+TFIDF\_ovr\_logreg & test\_synthetic & 1 & 0.7253 $\pm$ 0.0000 & 0.6744 $\pm$ 0.0000 & 0.2400 $\pm$ 0.0000 & 0.2240 $\pm$ 0.0000 & 0.7775 $\pm$ 0.0000 & 0.1624 $\pm$ 0.0000 & 0.1255 $\pm$ 0.0000 & 0.4848 $\pm$ 0.0000 & 0.8000 $\pm$ 0.0000 & 0.6667 $\pm$ 0.0000 & 0.8000 $\pm$ 0.0000 & 0.8750 $\pm$ 0.0000 \\
+TFIDF\_linear\_svc & test\_synthetic & 1 & 0.6844 $\pm$ 0.0000 & 0.6420 $\pm$ 0.0000 & 0.2000 $\pm$ 0.0000 & 0.2320 $\pm$ 0.0000 & 0.7995 $\pm$ 0.0000 & 0.1808 $\pm$ 0.0000 & 0.1348 $\pm$ 0.0000 & 0.4138 $\pm$ 0.0000 & 0.8000 $\pm$ 0.0000 & 0.6667 $\pm$ 0.0000 & 0.6667 $\pm$ 0.0000 & 0.8750 $\pm$ 0.0000 \\
+TFIDF\_classifier\_chain & test\_synthetic & 1 & 0.6413 $\pm$ 0.0000 & 0.5979 $\pm$ 0.0000 & 0.1200 $\pm$ 0.0000 & 0.3120 $\pm$ 0.0000 & 0.7105 $\pm$ 0.0000 & 0.1745 $\pm$ 0.0000 & 0.1475 $\pm$ 0.0000 & 0.3846 $\pm$ 0.0000 & 0.8000 $\pm$ 0.0000 & 0.6667 $\pm$ 0.0000 & 0.4800 $\pm$ 0.0000 & 0.8750 $\pm$ 0.0000 \\
+distilbert & test\_synthetic & 1 & 0.5469 $\pm$ 0.0000 & 0.5333 $\pm$ 0.0000 & 0.0400 $\pm$ 0.0000 & 0.3920 $\pm$ 0.0000 & 0.5252 $\pm$ 0.0000 & 0.0789 $\pm$ 0.0000 & 0.1714 $\pm$ 0.0000 & 0.4667 $\pm$ 0.0000 & 0.4444 $\pm$ 0.0000 & 0.5000 $\pm$ 0.0000 & 0.5000 $\pm$ 0.0000 & 0.8235 $\pm$ 0.0000 \\
+\bottomrule
+\end{tabular}
+\caption{Multi-label hallucination detection results across baselines and encoder architectures.}
+\label{tab:main_comparison}
+\end{table*}

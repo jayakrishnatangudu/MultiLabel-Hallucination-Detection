@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# Secrets & Environment
+.env
+.env.*
+*.key
+*.pem
+
+# Data (raw downloads and large processed/generated artifacts are never committed)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/generated/*
+!data/generated/.gitkeep
+data/validated/*
+!data/validated/.gitkeep
+data/splits/*
+!data/splits/.gitkeep
+
+# Checkpoints & Experiment Binaries
+models/*
+!models/.gitkeep
+experiments/**/checkpoints/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+
+# Notebooks / IDE
+.ipynb_checkpoints/
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+

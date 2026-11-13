@@ -1,0 +1,875 @@
+{
+  "schema_version": "1.0",
+  "preprocessing_config": {
+    "min_question_chars": 10,
+    "min_answer_chars": 15,
+    "min_question_words": 3,
+    "min_answer_words": 3,
+    "max_answer_words": 1500,
+    "strip_qa_prefixes": true,
+    "near_duplicate": {
+      "enabled": true,
+      "tfidf_cosine_threshold": 0.9,
+      "min_rare_token_jaccard": 0.65,
+      "rare_token_max_df_ratio": 0.02,
+      "enforce_same_qtype_if_present": true,
+      "max_audit_borderline_pairs": 25,
+      "borderline_cosine_low": 0.78
+    }
+  },
+  "preprocessing_config_sha256": "801a1f92bdf2e7c1d49141a275873131a7a19dfe967278e0dcd474ec1239be0f",
+  "total_raw_rows": 115530,
+  "total_final_clean_rows": 99461,
+  "total_unique_groups": 86933,
+  "combined_processed_path": "D:\\Major Project\\MultiLabel-Hallucination-Detection\\data\\processed\\all_sources_clean.jsonl",
+  "datasets": {
+    "medquad": {
+      "dataset_key": "medquad",
+      "domain": "medical",
+      "has_context": false,
+      "processed_path": "D:\\Major Project\\MultiLabel-Hallucination-Detection\\data\\processed\\medquad.jsonl",
+      "raw_total_rows": 16407,
+      "final_clean_rows": 16233,
+      "total_dropped_rows": 174,
+      "retention_rate": 0.9894,
+      "subset_counts_raw": {
+        "train": 16407
+      },
+      "subset_counts_final": {
+        "train": 16233
+      },
+      "attrition_breakdown": {
+        "raw_total_rows": 16407,
+        "dropped_too_long_answer": 125,
+        "dropped_too_short": 1,
+        "dropped_empty_topic_template": 4,
+        "dropped_exact_tuple_duplicates": 44
+      },
+      "missing_raw_fields": {},
+      "exact_qc_multi_answer_extra_rows": 2035,
+      "exact_qc_multi_answer_groups": 1426,
+      "unique_source_groups": 14154,
+      "near_duplicate_audit": {
+        "enabled": true,
+        "unique_questions_evaluated": 14198,
+        "merged_pairs_count": 44,
+        "rejected_by_rare_token_guard": 18,
+        "rejected_by_qtype_guard": 148,
+        "clusters_with_size_gt_1": 42,
+        "max_cluster_size": 3,
+        "sample_merged_pairs": [
+          {
+            "q1": "What is (are) Parkinson's Disease ?",
+            "q2": "What is (are) Parkinson disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What are the treatments for Parkinson's Disease ?",
+            "q2": "What are the treatments for Parkinson disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What is (are) Sjgren's Syndrome ?",
+            "q2": "What is (are) Sjgren syndrome ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What are the treatments for Sjgren's Syndrome ?",
+            "q2": "What are the treatments for Sjgren syndrome ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What is (are) Friedreich's Ataxia ?",
+            "q2": "What is (are) Friedreich ataxia ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What are the treatments for Friedreich's Ataxia ?",
+            "q2": "What are the treatments for Friedreich ataxia ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What is (are) Reye's Syndrome ?",
+            "q2": "What is (are) Reye Syndrome ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What is (are) Alzheimer's Disease ?",
+            "q2": "What is (are) Alzheimer disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What are the treatments for Alzheimer's Disease ?",
+            "q2": "What are the treatments for Alzheimer disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What is (are) Whipple's Disease ?",
+            "q2": "What is (are) Whipple Disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What are the treatments for Whipple's Disease ?",
+            "q2": "What are the treatments for Whipple Disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What is (are) Huntington's Disease ?",
+            "q2": "What is (are) Huntington disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What are the treatments for Huntington's Disease ?",
+            "q2": "What are the treatments for Huntington disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What is (are) Crohn's Disease ?",
+            "q2": "What is (are) Crohn disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What are the treatments for Crohn's Disease ?",
+            "q2": "What are the treatments for Crohn disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What is (are) Peyronie's Disease ?",
+            "q2": "What is (are) Peyronie disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What are the symptoms of Peyronie's Disease ?",
+            "q2": "What are the symptoms of Peyronie disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What causes Parkinson's Disease ?",
+            "q2": "What causes Parkinson disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What are the symptoms of Parkinson's Disease ?",
+            "q2": "What are the symptoms of Parkinson disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "How to diagnose Parkinson's Disease ?",
+            "q2": "How to diagnose Parkinson disease ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What is (are) Paget's Disease of Bone ?",
+            "q2": "What is (are) Paget disease of bone ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What are the symptoms of Paget's Disease of Bone ?",
+            "q2": "What are the symptoms of Paget disease of bone ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What are the treatments for Paget's Disease of Bone ?",
+            "q2": "What are the treatments for Paget disease of bone ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What is (are) Klinefelter's Syndrome ?",
+            "q2": "What is (are) Klinefelter syndrome ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          },
+          {
+            "q1": "What is (are) Kaposi's Sarcoma ?",
+            "q2": "What is (are) Kaposi sarcoma ?",
+            "cosine": 1.0,
+            "rare_token_jaccard": 1.0
+          }
+        ],
+        "sample_borderline_unmerged_pairs": [
+          {
+            "q1": "what are public health agencies doing to prevent or control botulism?",
+            "q2": "what are public health agencies doing to prevent or control yersiniosis for Yersinia ?",
+            "cosine": 0.7855,
+            "rare_token_jaccard": 0.625,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What is (are) Chronic Fatigue Syndrome (CFS) ?",
+            "q2": "What is (are) Chronic Fatigue Syndrome ?",
+            "cosine": 0.8216,
+            "rare_token_jaccard": 0.6667,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "How to diagnose Chronic Fatigue Syndrome (CFS) ?",
+            "q2": "How to diagnose Chronic fatigue syndrome ?",
+            "cosine": 0.8461,
+            "rare_token_jaccard": 0.6667,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What are the treatments for Chronic Fatigue Syndrome (CFS) ?",
+            "q2": "What are the treatments for Chronic fatigue syndrome ?",
+            "cosine": 0.8317,
+            "rare_token_jaccard": 0.6667,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "what research (or clinical trials) is being done for Cerebral Palsy ?",
+            "q2": "what research (or clinical trials) is being done for Cerebral Atrophy ?",
+            "cosine": 0.7808,
+            "rare_token_jaccard": 0.3333,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What is (are) Tuberous Sclerosis ?",
+            "q2": "What is (are) tuberous sclerosis complex ?",
+            "cosine": 0.8308,
+            "rare_token_jaccard": 0.6667,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What are the treatments for Tuberous Sclerosis ?",
+            "q2": "What are the treatments for tuberous sclerosis complex ?",
+            "cosine": 0.8388,
+            "rare_token_jaccard": 0.6667,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "what research (or clinical trials) is being done for Multiple System Atrophy ?",
+            "q2": "what research (or clinical trials) is being done for Multiple System Atrophy with Orthostatic Hypotension ?",
+            "cosine": 0.7986,
+            "rare_token_jaccard": 0.6,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What is (are) Chronic Inflammatory Demyelinating Polyneuropathy (CIDP) ?",
+            "q2": "What is (are) Chronic inflammatory demyelinating polyneuropathy ?",
+            "cosine": 0.8691,
+            "rare_token_jaccard": 0.8,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What are the treatments for Chronic Inflammatory Demyelinating Polyneuropathy (CIDP) ?",
+            "q2": "What are the treatments for Chronic inflammatory demyelinating polyneuropathy ?",
+            "cosine": 0.8743,
+            "rare_token_jaccard": 0.8,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What is (are) Klippel-Trenaunay Syndrome (KTS) ?",
+            "q2": "What is (are) Klippel-Trenaunay syndrome ?",
+            "cosine": 0.8358,
+            "rare_token_jaccard": 0.6667,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What are the treatments for Klippel-Trenaunay Syndrome (KTS) ?",
+            "q2": "What are the treatments for Klippel-Trenaunay syndrome ?",
+            "cosine": 0.8409,
+            "rare_token_jaccard": 0.6667,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What is (are) Charcot-Marie-Tooth Disease ?",
+            "q2": "What is (are) Charcot-Marie-Tooth disease type 1E ?",
+            "cosine": 0.8035,
+            "rare_token_jaccard": 0.75,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What is (are) Charcot-Marie-Tooth Disease ?",
+            "q2": "What is (are) Charcot-Marie-Tooth disease type 1A ?",
+            "cosine": 0.8172,
+            "rare_token_jaccard": 0.75,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What is (are) Charcot-Marie-Tooth Disease ?",
+            "q2": "What is (are) Charcot-Marie-Tooth disease type 4 ?",
+            "cosine": 0.847,
+            "rare_token_jaccard": 0.6,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What is (are) Charcot-Marie-Tooth Disease ?",
+            "q2": "What is (are) Charcot-Marie-Tooth disease type 2B ?",
+            "cosine": 0.799,
+            "rare_token_jaccard": 0.75,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What is (are) Charcot-Marie-Tooth Disease ?",
+            "q2": "What is (are) Charcot-Marie-Tooth disease type 2F ?",
+            "cosine": 0.8073,
+            "rare_token_jaccard": 0.75,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What are the treatments for Charcot-Marie-Tooth Disease ?",
+            "q2": "What are the treatments for Charcot-Marie-Tooth disease type 2F ?",
+            "cosine": 0.8194,
+            "rare_token_jaccard": 0.75,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What is (are) Alternating Hemiplegia ?",
+            "q2": "What is (are) alternating hemiplegia of childhood ?",
+            "cosine": 0.8139,
+            "rare_token_jaccard": 0.6667,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What are the treatments for Alternating Hemiplegia ?",
+            "q2": "What are the treatments for alternating hemiplegia of childhood ?",
+            "cosine": 0.8216,
+            "rare_token_jaccard": 0.6667,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What is (are) Aicardi-Goutieres Syndrome Disorder ?",
+            "q2": "What is (are) Aicardi-Goutieres syndrome ?",
+            "cosine": 0.8557,
+            "rare_token_jaccard": 0.6667,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What are the treatments for Aicardi-Goutieres Syndrome Disorder ?",
+            "q2": "What are the treatments for Aicardi-Goutieres syndrome ?",
+            "cosine": 0.8656,
+            "rare_token_jaccard": 0.6667,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What is (are) Spina Bifida ?",
+            "q2": "What is (are) Spina bifida occulta ?",
+            "cosine": 0.7936,
+            "rare_token_jaccard": 0.6667,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What is (are) Restless Legs Syndrome ?",
+            "q2": "What is (are) Restless Legs ?",
+            "cosine": 0.8991,
+            "rare_token_jaccard": 1.0,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What is the outlook for Ataxia Telangiectasia ?",
+            "q2": "What is the outlook for Ataxia ?",
+            "cosine": 0.7888,
+            "rare_token_jaccard": 0.5,
+            "reason": "below_cosine_threshold"
+          }
+        ]
+      },
+      "length_stats_words": {
+        "question": {
+          "count": 16233,
+          "min": 3,
+          "mean": 8.19,
+          "median": 8.0,
+          "p95": 12,
+          "max": 27
+        },
+        "answer": {
+          "count": 16233,
+          "min": 4,
+          "mean": 185.67,
+          "median": 137.0,
+          "p95": 484,
+          "max": 1496
+        },
+        "context": {
+          "count": 0,
+          "min": 0,
+          "mean": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0
+        }
+      },
+      "licensing": {
+        "hf_card_license": null,
+        "upstream_license": "CC-BY-4.0",
+        "license_status": "upstream_caution",
+        "redistribution_permitted": true,
+        "attribution": "Ben Abacha, A., & Demner-Fushman, D. (2019). A question-entailment approach to question answering. BMC Bioinformatics, 20, 1-23.",
+        "notes": "Mirror of abachaa/MedQuAD (CC BY 4.0). HF card omits license metadata; upstream repo removes answers from 3 MedlinePlus subsets per MedlinePlus copyright."
+      }
+    },
+    "legal_qa_v1": {
+      "dataset_key": "legal_qa_v1",
+      "domain": "legal",
+      "has_context": false,
+      "processed_path": "D:\\Major Project\\MultiLabel-Hallucination-Detection\\data\\processed\\legal_qa_v1.jsonl",
+      "raw_total_rows": 3742,
+      "final_clean_rows": 3718,
+      "total_dropped_rows": 24,
+      "retention_rate": 0.9936,
+      "subset_counts_raw": {
+        "train": 3742
+      },
+      "subset_counts_final": {
+        "train": 3718
+      },
+      "attrition_breakdown": {
+        "raw_total_rows": 3742,
+        "dropped_too_short": 5,
+        "dropped_exact_tuple_duplicates": 1,
+        "dropped_too_long_answer": 18
+      },
+      "missing_raw_fields": {},
+      "exact_qc_multi_answer_extra_rows": 9,
+      "exact_qc_multi_answer_groups": 9,
+      "unique_source_groups": 3699,
+      "near_duplicate_audit": {
+        "enabled": true,
+        "unique_questions_evaluated": 3709,
+        "merged_pairs_count": 10,
+        "rejected_by_rare_token_guard": 0,
+        "rejected_by_qtype_guard": 0,
+        "clusters_with_size_gt_1": 10,
+        "max_cluster_size": 2,
+        "sample_merged_pairs": [
+          {
+            "q1": "Central District Court of California - specific question. Serving complaint/summons - federal case. Central district court of California. Case was efiled in EDSS system for in Pro Per plaintiffs. Documents will appear in PACER. Can copies of complaint/summons for serving be downloaded from PACER? What is conformed copy of documents? When they are needed?",
+            "q2": "Serving complaint/summons - federal case. Central district court of California.. Serving complaint/summons - federal case. Central district court of California. Case was efiled in EDSS system for in Pro Per plaintiffs. Documents will appear in PACER. Can copies of complaint/summons for serving be downloaded from PACER? What is conformed copy of documents? When they are needed?",
+            "cosine": 0.9433,
+            "rare_token_jaccard": 0.9412
+          },
+          {
+            "q1": "Do I have to continue paying a credit line loan if the bank no longer has the original signed documents?. I took out a credit line on a business over 20 years ago, that business is now closed. The bank at some point converted the account into my personal name and they have raised the interest rate 3 times what the original rate was. They cannot produce the original signed documents which I requested to explain the rate increases. Thank you.",
+            "q2": "Do I have to continue paying a credit line loan if the bank no longer has the original signed documents?. I took out a credit line on a business over 20 years ago, that business is now closed. The bank at some point converted the account into my personal name and they have raised the interest rate 3 times what the original rate was. They cannot produce the original signed documents which I requested to explain the rate increases. The loan originated in California. Thank you.",
+            "cosine": 0.9618,
+            "rare_token_jaccard": 0.9333
+          },
+          {
+            "q1": "What has to be specific legal basis to confront Defendant's motion to strike based on failure to join a party (rule 19). EMTALA complaint against hospital has additional claim for CMIA violation. Plaintiff medical information was disclosed to hospice (with non-existent terminal illness). What has to be specific legal basis for Plaintiff to confront Defendant's motion to strike based on failure to join a party (hospice) - rule 19? Apparently legal action against hospice would not be limited only to CMIA violation, adding hospice as defendant at this point would deprive Plaintiff's rights. Can Cmia violation claim be stricken from complaint without impact to original EMTALA claim?",
+            "q2": "What has to be specific legal basis? - please see question below. EMTALA complaint against hospital has additional claim for CMIA violation. Plaintiff medical information was disclosed to hospice (with non-existent terminal illness). What has to be specific legal basis for Plaintiff to confront Defendant's motion to strike based on failure to join a party (hospice) - rule 19? Apparently legal action against hospice would not be limited only to CMIA violation, adding hospice as defendant at this point would deprive Plaintiff's rights. Can Cmia violation claim be stricken from complaint without impact to original EMTALA claim?",
+            "cosine": 0.9326,
+            "rare_token_jaccard": 0.9643
+          },
+          {
+            "q1": "Adding claim/defendant to federal complaint - question.. Adding claim/defendant to federal complaint - question. EMTALA complaint against hospital was just filed with federal court, with additional claim for CMIA violation (under supplemental jurisdiction) There is basis to add false claims act claim for fraudulent referral to hospice with non-existent terminal illness, adding hospice as defendant. Should plaintiff wait for scheduling conference? At what point of lawsuit plaintiff can ask court to grant leave to amend complaint?",
+            "q2": "Adding claim to complaint, adding defendant - federal case question. Central District Court.. Adding claim/defendant to federal complaint - question. EMTALA complaint against hospital was just filed with federal court, with additional claim for CMIA violation (under supplemental jurisdiction) There is basis to add false claims act claim for fraudulent referral to hospice with non-existent terminal illness, adding hospice as defendant. Should plaintiff wait for scheduling conference? At what point of lawsuit plaintiff can ask court to grant leave to amend complaint?",
+            "cosine": 0.9263,
+            "rare_token_jaccard": 0.92
+          },
+          {
+            "q1": "The Skullgirls team has taken a digital product that many people purchased and altered it in very significant ways.. The Skullgirls team has taken a digital product that many people purchased and altered it in very significant ways. They've cut out entire pages from the art book, removed and re-announced voice lines, and drawn over concept art to make it less offensive. The current Skullgirls team, while many of them have ties to the very beginning of the game, is not the same team it was at the beginning. They're missing some of the most important contributors to the Skullgirls brand. They're also literally a completely different company than the original Lab Zero, who is now censoring Lab Zero's products. if these were physical products. Imagine if you bought a physical art book that you really loved. Ten years later, when the company you bought that art book from is overtaken by another company, that new company comes into your house and demands that you give them the pages of the art book that they deemed offensive. simiar situated similar facts & loss",
+            "q2": "The Skullgirls team has taken a digital product that many people purchased and altered it in very significant ways.. The Skullgirls team has taken a digital product that many people purchased and altered it in very significant ways. They've cut out entire pages from the art book, removed and re-announced voice lines, and drawn over concept art to make it less offensive. The current Skullgirls team, while many of them have ties to the very beginning of the game, is not the same team it was at the beginning. They're missing some of the most important contributors to the Skullgirls brand. They're also literally a completely different company than the original Lab Zero, who is now censoring Lab Zero's products. if these were physical products. Imagine if you bought a physical art book that you really loved. Ten years later, when the company you bought that art book from is overtaken by another company, that new company comes into your house and demands that you give them the pages of the art book that they deemed offensive.",
+            "cosine": 0.9873,
+            "rare_token_jaccard": 0.898
+          },
+          {
+            "q1": "The electric Company came out today (Saturday) and disconnected my electricity (which is included in rent) is this legal. My landlord recently passed away and his heirs seem to think that an acceptable way to encourage the tenants to move out is to stop paying the utility bills, which are included in the monthly rent payments, and the electricity got shut off today (on a Saturday) - the utility company is now telling me that they won't restore service to this address even in my name unless I pay THEIR unpaid bill (they have been racking it up since he passed away 4 mo ago (which I technically already paid as part of my rent) What recourse do I have? Also I thought I read on ccup.ca.gov that it's illegal for utilities companies to cut off utilities on a weekend like they did, and is it legal for them to deny access to basic public utility services unless I pay someone else's bill that I never had any agreement with them to pay? I don't know who to be more furious at",
+            "q2": "The electric Company came out today (Saturday) and disconnected my electricity (which is included in rent) is this legal. My landlord recently passed away and his heirs seem to think that an acceptable way to encourage the tenants to move out is to stop paying the utility bills, which are included in the monthly rent payments, and the electricity got shut off today (on a Saturday) - the utility company is now telling me that they won't restore service to this address even in my name unless I pay THEIR unpaid bill (they have been racking it up since he passed away 4 mo ago (which I technically already paid as part of my rent) What recourse do I have? Also I thought I read on ccup.ca.gov that it's illegal for utilities companies to cut off utilities on a weekend like they did, and is it legal for them to deny access to basic public utility services unless I pay someone else's bill that I never had any agreement with them to pay? I don't know who to be more furious at PS: I am disabled and low income, and a lady that is also on this property in a different unit and equally affected is a senior citizen",
+            "cosine": 0.9411,
+            "rare_token_jaccard": 0.8
+          },
+          {
+            "q1": "Stolen car. Did a title loan with a friend and they ended up stealing my car. I did a title loan with a friend of mine of 20 years. I borrowed 2900 with the promise of paying back $3,900 within 21 days. My car is worth $40,000.00. We wrote up a agreement and had a witness sign it on day 20 he showed up with the cops and my car title in his name. After multiple ignored phone calls I finally get in touch with them after they took my car home that day and they told me that if I wanted it back I had to pay back $7,000 but now they will not answer the phone what can I do?",
+            "q2": "Did a title loan with a friend and they ended up stealing my car.. Did a title loan with a friend and they ended up stealing my car. I did a title loan with a friend of mine of 20 years. I borrowed 2900 with the promise of paying back $3,900 within 21 days. My car is worth $40,000.00. We wrote up a agreement and had a witness sign it on day 20 he showed up with the cops and my car title in his name. After multiple ignored phone calls I finally get in touch with them after they took my car home that day and they told me that if I wanted it back I had to pay back $7,000 but now they will not answer the phone what can I do?",
+            "cosine": 0.9723,
+            "rare_token_jaccard": 0.9565
+          },
+          {
+            "q1": "Hoa selective enforcement and service dog retaliation. Hoa and residents are discriminating against me because of my service dog. They proceed to make many false claims about the dog barking all night long, I was able to prove them wrong by taking a video of another dog who was actually barking all night. At that point the HOA president called and asked if my dog as a Doberman and proceeded to tell me I MUST have the dog with me all the time and can’t leave it at home alone. Now 2 months later, not being able of accusing me of the dog barking anymore, the HOa sent a letter to my landlord requesting me to remove an Ikea bag from my parking space as it’s against the rules to store items. I took pics of other residents storing furniture, bags full of trash, paint, gym equipment etc.. in the same spot. She an enforcing the rule only with me lol I’m ready to file a complaint and sue them, I want to be left in peace. My doctor that I had for 8 years also sent a letter to them confirming my disability. What are the steps I can take?",
+            "q2": "HOA practicing selective enforcement and discrimination because of service dog. Hoa and residents are discriminating against me because of my service dog. They proceed to make many false claims about the dog barking all night long, I was able to prove them wrong by taking a video of another dog who was actually barking all night. At that point the HOA president called and asked if my dog as a Doberman and proceeded to tell me I MUST have the dog with me all the time and can’t leave it at home alone. Now 2 months later, not being able of accusing me of the dog barking anymore, the HOa sent a letter to my landlord requesting me to remove an Ikea bag from my parking space as it’s against the rules to store items. I took pics of other residents storing furniture, bags full of trash, paint, gym equipment etc.. in the same spot. She an enforcing the rule only with me lol I’m ready to file a complaint and sue them, I want to be left in peace. My doctor that I had for 8 years also sent a letter to them confirming my disability.",
+            "cosine": 0.9665,
+            "rare_token_jaccard": 0.9216
+          },
+          {
+            "q1": "I need to know if I have any options regarding wrongful eviction from storage facility.. OK a little over a month ago I paid for a 5x10 storage unit from extra space storage I'm upland California. I paid extra money for 24 hr access which was offered at this location. As soon as I got there one of the workers named Ashley immediately asked me why I got 24 hr access, do I really evan need it, it's usually only for people with a business and I was a littke offended but nicely replied yes obviously I do need it for work reasons thats why I purchased it. So 2 days later I got a call like I do in the middle of the night to go fix a electrical issue. I came to the storage at about 3am when I was done and sat in my car for about 5 hrs and got caught up on a bunch of paperwork. I didn't bother no one I wasn't in anyone's way I didn't evan see anyone else. Well when they opened and Ashley must have Bern doing her rounds immediately came up to my car and said I can't sit there like that. I said fine ill go. Well she must jjave rushed to the office to view the cameras and saw I was",
+            "q2": "OK a little over a month ago I paid for a 5x10 storage unit from extra space storage I'm upland California.. I paid extra money for 24 hr access which was offered at this location. As soon as I got there one of the workers named Ashley immediately asked me why I got 24 hr access, do I really evan need it, it's usually only for people with a business and I was a littke offended but nicely replied yes obviously I do need it for work reasons thats why I purchased it. So 2 days later I got a call like I do in the middle of the night to go fix a electrical issue. I came to the storage at about 3am when I was done and sat in my car for about 5 hrs and got caught up on a bunch of paperwork. I didn't bother no one I wasn't in anyone's way I didn't evan see anyone else. Well when they opened and Ashley must have Bern doing her rounds immediately came up to my car and said I can't sit there like that. I said fine ill go. Well she must jjave rushed to the office to view the cameras and saw I was",
+            "cosine": 0.9759,
+            "rare_token_jaccard": 0.9138
+          },
+          {
+            "q1": "How hard is it to prove you are the rightful owner of mineral estate when someone else has been receiving lease bonuses. The reservation is a 1/16 in deed but it’s because the land was under mineral lease when it was sold lessee held 15/16 interest in minerals. I can prove by one property owned at time and we still own had 1/16 conveyance from estates children to their mother because father died intestate and conveyed 1/16 of minerals to mother. Then it was purchased by my aunt and she has 100 % of minerals and get the lease bonuses on property. So what would be the easy way to use this information to establish that we do hold the royalty interest in the other property someone else has been receiving lease bonus on.",
+            "q2": "The reservation is a 1/16 in deed but it’s but the land was under mineral lease when it was sold. The reservation is a 1/16 in deed but it’s because the land was under mineral lease when it was sold lessee held 15/16 interest in minerals. I can prove by one property owned at time and we still own had 1/16 conveyance from estates children to their mother because father died intestate and conveyed 1/16 of minerals to mother. Then it was purchased by my aunt and she has 100 % of minerals and get the lease bonuses on property. So what would be the easy way to use this information to establish that we do hold the royalty interest in the other property someone else has been receiving lease bonus on.",
+            "cosine": 0.9018,
+            "rare_token_jaccard": 0.9286
+          }
+        ],
+        "sample_borderline_unmerged_pairs": [
+          {
+            "q1": "Why are the lower courts operating under a maritime law when we are on land how did they have jurisdiction on land. Why is it California judicial system violates the rights under the constitution of due process when the Constitution states anything that's adverse to the Constitution is null and void? And how is it that the police department is allowed to invade your privacy punish you without proper due process rights. And the court judge and the district attorney when you question them about having jurisdiction over the subject matter they tell me that the county has jurisdiction over the living man from my understanding from reading the Constitution that no corporation has jurisdiction over Man.",
+            "q2": "Why are the lower courts operating under a maritime law when we are on land how did they have jurisdiction on land. Why is it California judicial system violates the rights under the constitution of due process when the Constitution states anything that's adverse to the Constitution is null and void? And how is it that the police department is allowed to invade your privacy punish you without proper due process rights",
+            "cosine": 0.8028,
+            "rare_token_jaccard": 0.7083,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "I’ve slapped my bf before. He has evidence. Then he attacked me twice very brutal attacks. Who gets into trouble?. I’ve slapped him 3 times in the past. But yesterday he brutally attacked me, choked me slapped me dragged me by my hair and threw a door on me. Who gets into trouble?",
+            "q2": "I’ve slapped him 3 times in the past. But yesterday he brutally attacked me, choked me slapped me dragged me by my hair. I’ve slapped him 3 times in the past. But yesterday he brutally attacked me, choked me slapped me dragged me by my hair and threw a door on me. Who gets into trouble?",
+            "cosine": 0.8011,
+            "rare_token_jaccard": 0.75,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "Does California false claims act cover medicare violations?. Does California false claims act cover medicare violations? (Or limited to California Medi-cal violations?",
+            "q2": "Does California Healthcare false claims act limited to California Medi-cal violations?. Does California false claims act cover medicare violations? (Or limited to California Medi-cal violations?)",
+            "cosine": 0.8634,
+            "rare_token_jaccard": 0.875,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "Plaintiff's response to Defendant's demurrer/motion to strike.. Options are: opposition or amended complaint. But if Plaintiff needs to obtain more information to amend complaint, short of time to do it before hearing: how Plaintiff can inform court about it? Can amended complaint include statement that defendant's discovery responses expected?",
+            "q2": "In California superior court. Plaintiff's preparation for hearing on demurrer/motion to strike.. Options are: opposition or amended complaint. But if Plaintiff needs to obtain more information to amend complaint, short of time to do it before hearing: how Plaintiff can inform court about it? Can amended complaint include statement that defendant's discovery responses expected?",
+            "cosine": 0.893,
+            "rare_token_jaccard": 0.8636,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "Questions regarding legal career. I'm currently a Political Science student at UCLA. I am considering going to law school and I would like to talk to currently practicing lawyers to gain some perspective regarding law school and careers in law. Would appreciate if anyone would be willing to chat :)",
+            "q2": "Questions regarding legal career. I'm currently a Political Science student at UCLA. I am considering going to law school and I would like to talk to currently practicing lawyers to gain some perspective regarding law school and careers in law so I can make an informed decision as to whether or not to attend law school. Would appreciate if anyone would be willing to chat :)",
+            "cosine": 0.8897,
+            "rare_token_jaccard": 0.8182,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "In California what state and federal statutes and regulations define hospital's general liability for harm in such case?. Integrated actions of service providers at the hospital (mostly independent contractors), miscommunication, had adverse outcome/harm: improper referrals for patient upon discharge. In California what state and federal statutes and regulations define hospital's general liability for harm in such case?",
+            "q2": "In California what state and federal statutes and regulations define hospital liability for general torts in such case?. Integrated actions of service providers at the hospital (mostly independent contractors), miscommunication, had adverse outcome/harm: improper referrals for patient upon discharge. Patient health coverage Medicare. In California what state and federal statutes and regulations define hospital liability for general torts in such case?",
+            "cosine": 0.7981,
+            "rare_token_jaccard": 0.8696,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "I have a judgment against me for 8,000 in FL (from 12 years ago) and am currently residing in NY.. I have a judgment against me for approx $8,000 in FL (from 12 years ago) and am currently residing in White Plains, NY. I cannot pay this debt right now in any way, not even a minimum payment. Can the debtor come after my vehicle (worth approximately 5k) if it's registered under BOTH my name and my wife's name?",
+            "q2": "I have a judgment against me for 8,000 in NJ (from 12 years ago) and am currently residing in NY.. I have a judgment against me for approx $7,000 total (from 12 years ago) in a different state (NJ and Florida) and am currently residing in NY. I cannot pay this debt right now in any way, not even a minimum payment. Can the debtor come after my vehicle (worth approximately 4k) if it's registered under BOTH my name and my wife's name?",
+            "cosine": 0.8139,
+            "rare_token_jaccard": 0.5789,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "Q: Do I have to declare my two contempt of court charges if it was expunged on a Student Visa for Australia?. My two Contempt of Court charges were because I forgot to pay my traffic tickets and show up to court. But I got all of them expunged 3 years ago",
+            "q2": "Do i have to declare my two contempt of court charges if it was remanded and expunged on a Student Visa for Australia?. My two Contempt of Court charges was because I forgot to pay my traffic tickets and show up to court. But i got all of them expunged",
+            "cosine": 0.8899,
+            "rare_token_jaccard": 0.8182,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "Does my ex-husband have a chance. He resides in Saudi Arabia and the UAE is looking to BAN him from the middle east for stealing money. He recently got a lawyer asking that our son come to visit for 3/4 months with him. Current agreement is 6 days a month as he was in the US at the time.Our son is remote learning in a US program. My concerns is the governments currently travel advisory specific to Saudi and the threat is causes to Western compounds to which our son could be residing. He's also asking I pay have of the international fees. How should I go about this matter? Thanks in advance",
+            "q2": "Does my ex-husband have a chance. Our son is 11 Sep 26 and we reside in CO with me, where the original agreement was established. I have the majority as I can make all major decisions. He pays child support when he feels like it. He owes 28k+ He resides in Saudi Arabia and the UAE is looking to BAN him from the middle east for stealing money. The UAE threatening he will be banned from the middle east in general. He recently got a lawyer asking that our son come to visit for 3/4 months with him. Current agreement is 6 days a month as he was in the US at the time.Our son is remote learning in a US program. My concerns is the governments currently travel advisory specific to Saudi and the threat is causes to Western compounds to which our son could be residing. He's also asking I pay have of the international fees. How should I go about this matter? Thanks in advance",
+            "cosine": 0.8399,
+            "rare_token_jaccard": 0.6304,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "How to Get a Job in Criminal Justice Administration",
+            "q2": "How to Get a Job in Criminal Justice",
+            "cosine": 0.8494,
+            "rare_token_jaccard": 0.6667,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What Happens When You Can’t Pay a Rent-to-Own Place?",
+            "q2": "What Legal Action Happens When You Can’t Pay a Rent to Own Place?",
+            "cosine": 0.8465,
+            "rare_token_jaccard": 1.0,
+            "reason": "below_cosine_threshold"
+          }
+        ]
+      },
+      "length_stats_words": {
+        "question": {
+          "count": 3718,
+          "min": 3,
+          "mean": 80.59,
+          "median": 64.0,
+          "p95": 203,
+          "max": 241
+        },
+        "answer": {
+          "count": 3718,
+          "min": 4,
+          "mean": 189.53,
+          "median": 137.0,
+          "p95": 517,
+          "max": 1488
+        },
+        "context": {
+          "count": 0,
+          "min": 0,
+          "mean": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0
+        }
+      },
+      "licensing": {
+        "hf_card_license": null,
+        "upstream_license": "unresolved",
+        "license_status": "unresolved",
+        "redistribution_permitted": false,
+        "attribution": "dzunggg/legal-qa-v1 (Hugging Face community dataset; upstream legal Q&A portal provenance unverified).",
+        "notes": "LICENSE UNRESOLVED: No license file or metadata on Hugging Face and unverified upstream web QA sources. Do NOT redistribute raw or derived records."
+      }
+    },
+    "fiqa": {
+      "dataset_key": "fiqa",
+      "domain": "finance",
+      "has_context": false,
+      "processed_path": "D:\\Major Project\\MultiLabel-Hallucination-Detection\\data\\processed\\fiqa.jsonl",
+      "raw_total_rows": 6500,
+      "final_clean_rows": 6454,
+      "total_dropped_rows": 46,
+      "retention_rate": 0.9929,
+      "subset_counts_raw": {
+        "train": 5500,
+        "test": 1000
+      },
+      "subset_counts_final": {
+        "train": 5461,
+        "test": 993
+      },
+      "attrition_breakdown": {
+        "raw_total_rows": 6500,
+        "dropped_empty_question_or_answer": 11,
+        "dropped_too_short": 30,
+        "dropped_too_long_answer": 5
+      },
+      "missing_raw_fields": {
+        "missing_answer_raw": 11
+      },
+      "exact_qc_multi_answer_extra_rows": 0,
+      "exact_qc_multi_answer_groups": 0,
+      "unique_source_groups": 6454,
+      "near_duplicate_audit": {
+        "enabled": true,
+        "unique_questions_evaluated": 6454,
+        "merged_pairs_count": 0,
+        "rejected_by_rare_token_guard": 0,
+        "rejected_by_qtype_guard": 0,
+        "clusters_with_size_gt_1": 0,
+        "max_cluster_size": 1,
+        "sample_merged_pairs": [],
+        "sample_borderline_unmerged_pairs": [
+          {
+            "q1": "Does the CRA reprieve those who have to commute for work?",
+            "q2": "Does the IRS reprieve those who have to commute for work?",
+            "cosine": 0.7983,
+            "rare_token_jaccard": 0.6,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "Where to start with personal finance?",
+            "q2": "Where to start with personal finance in Canada?",
+            "cosine": 0.8461,
+            "rare_token_jaccard": 0.75,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "How do I get into investing?",
+            "q2": "How do I get into investing in stocks?",
+            "cosine": 0.8652,
+            "rare_token_jaccard": 0.6667,
+            "reason": "below_cosine_threshold"
+          },
+          {
+            "q1": "What are my investment options in Australia?",
+            "q2": "Investment options in Australia",
+            "cosine": 0.7847,
+            "rare_token_jaccard": 1.0,
+            "reason": "below_cosine_threshold"
+          }
+        ]
+      },
+      "length_stats_words": {
+        "question": {
+          "count": 6454,
+          "min": 3,
+          "mean": 10.87,
+          "median": 10.0,
+          "p95": 19,
+          "max": 31
+        },
+        "answer": {
+          "count": 6454,
+          "min": 4,
+          "mean": 198.95,
+          "median": 155.0,
+          "p95": 511,
+          "max": 1490
+        },
+        "context": {
+          "count": 0,
+          "min": 0,
+          "mean": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0
+        }
+      },
+      "licensing": {
+        "hf_card_license": "apache-2.0",
+        "upstream_license": "mixed_upstream_cc_by_sa_and_forum_tos",
+        "license_status": "upstream_caution",
+        "redistribution_permitted": false,
+        "attribution": "Maia, M., Handschuh, S., Freitas, A., Davis, B., McDermott, R., Zarrouk, M., & Balahur, A. (2018). WWW'18 Open Challenge: Financial Opinion Mining and Question Answering.",
+        "notes": "HF mirror tags apache-2.0, which does not override upstream StackExchange (CC BY-SA) or financial forum platform terms from FiQA 2018. Treat as research-use only without commercial redistribution."
+      }
+    },
+    "pubmedqa": {
+      "dataset_key": "pubmedqa",
+      "domain": "medical",
+      "has_context": true,
+      "processed_path": "D:\\Major Project\\MultiLabel-Hallucination-Detection\\data\\processed\\pubmedqa.jsonl",
+      "raw_total_rows": 62249,
+      "final_clean_rows": 62227,
+      "total_dropped_rows": 22,
+      "retention_rate": 0.9996,
+      "subset_counts_raw": {
+        "pqa_labeled": 1000,
+        "pqa_unlabeled": 61249
+      },
+      "subset_counts_final": {
+        "pqa_labeled": 1000,
+        "pqa_unlabeled": 61227
+      },
+      "attrition_breakdown": {
+        "raw_total_rows": 62249,
+        "dropped_too_short": 13,
+        "dropped_exact_tuple_duplicates": 9
+      },
+      "missing_raw_fields": {},
+      "exact_qc_multi_answer_extra_rows": 0,
+      "exact_qc_multi_answer_groups": 0,
+      "unique_source_groups": 62118,
+      "near_duplicate_audit": {
+        "enabled": false,
+        "reason": "Document-grounded dataset grouped primarily by source_document_id to avoid merging template questions across distinct contracts/abstracts.",
+        "unique_documents": 62227
+      },
+      "length_stats_words": {
+        "question": {
+          "count": 62227,
+          "min": 3,
+          "mean": 13.34,
+          "median": 13.0,
+          "p95": 21,
+          "max": 47
+        },
+        "answer": {
+          "count": 62227,
+          "min": 6,
+          "mean": 41.98,
+          "median": 39.0,
+          "p95": 78,
+          "max": 412
+        },
+        "context": {
+          "count": 62227,
+          "min": 25,
+          "mean": 198.76,
+          "median": 197.0,
+          "p95": 294,
+          "max": 814
+        }
+      },
+      "licensing": {
+        "hf_card_license": "mit",
+        "upstream_license": "MIT",
+        "license_status": "verified_open",
+        "redistribution_permitted": true,
+        "attribution": "Jin, Q., Dhingra, B., Liu, Z., Cohen, W. W., & Lu, X. (2019). PubMedQA: A Dataset for Biomedical Research Question Answering. EMNLP-IJCNLP 2019.",
+        "notes": "Code and dataset licensed under MIT (github.com/pubmedqa/pubmedqa). Source abstracts derive from PubMed/MEDLINE (retain PMID attribution via pubid)."
+      }
+    },
+    "cuad_qa": {
+      "dataset_key": "cuad_qa",
+      "domain": "legal",
+      "has_context": true,
+      "processed_path": "D:\\Major Project\\MultiLabel-Hallucination-Detection\\data\\processed\\cuad_qa.jsonl",
+      "raw_total_rows": 26632,
+      "final_clean_rows": 10829,
+      "total_dropped_rows": 15803,
+      "retention_rate": 0.4066,
+      "subset_counts_raw": {
+        "train": 22450,
+        "test": 4182
+      },
+      "subset_counts_final": {
+        "train": 9671,
+        "test": 1158
+      },
+      "attrition_breakdown": {
+        "raw_total_rows": 26632,
+        "dropped_too_short": 1576,
+        "dropped_unanswerable_cuad_impossible": 14208,
+        "dropped_exact_tuple_duplicates": 19
+      },
+      "missing_raw_fields": {
+        "missing_answer_raw": 14208
+      },
+      "exact_qc_multi_answer_extra_rows": 4638,
+      "exact_qc_multi_answer_groups": 1957,
+      "unique_source_groups": 508,
+      "near_duplicate_audit": {
+        "enabled": false,
+        "reason": "Document-grounded dataset grouped primarily by source_document_id to avoid merging template questions across distinct contracts/abstracts.",
+        "unique_documents": 508
+      },
+      "length_stats_words": {
+        "question": {
+          "count": 10829,
+          "min": 25,
+          "mean": 40.01,
+          "median": 38.0,
+          "p95": 69,
+          "max": 80
+        },
+        "answer": {
+          "count": 10829,
+          "min": 3,
+          "mean": 51.63,
+          "median": 38.0,
+          "p95": 141,
+          "max": 1414
+        },
+        "context": {
+          "count": 10829,
+          "min": 109,
+          "mean": 12566.43,
+          "median": 8888.0,
+          "p95": 34155,
+          "max": 47733
+        }
+      },
+      "licensing": {
+        "hf_card_license": "cc-by-4.0",
+        "upstream_license": "CC-BY-4.0",
+        "license_status": "upstream_caution",
+        "redistribution_permitted": true,
+        "attribution": "Hendrycks, D., Burns, C., Chen, A., & Ball, S. (2021). CUAD: An Expert-Annotated NLP Dataset for Legal Contract Review. NeurIPS 2021.",
+        "notes": "Official HF dataset cards (theatticusproject/cuad & cuad-qa) specify CC BY 4.0, though the GitHub repo lacks a root LICENSE file."
+      }
+    }
+  }
+}
